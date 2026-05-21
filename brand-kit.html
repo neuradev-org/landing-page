@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neuradev — Brand Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            a: { primary: '#4F46E6', hover: '#4338CA', accent: '#10B981', warm: '#FBBF24', 'warm-bg': '#FEF3C7' },
+            b: { bg: '#0A0A0B', surface: '#131316', border: '#1E1E22', text: '#EDEAE3', muted: '#8B8880', lime: '#C6FF3D', periwinkle: '#7C8CFF' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .grid-bg {
+      background-image: linear-gradient(rgba(237,234,227,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,234,227,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .card-a { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: default; }
+    .card-a:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(15,23,42,0.1); }
+    .card-b { transition: border-color 0.2s ease; cursor: default; }
+    .card-b:hover { border-color: rgba(237,234,227,0.28) !important; }
+    .btn-ap { transition: all 0.2s ease; }
+    .btn-ap:hover { background: #4338CA; box-shadow: 0 8px 20px rgba(79,70,230,0.3); }
+    .btn-ao { transition: all 0.2s ease; }
+    .btn-ao:hover { background: #4F46E6; color: white; }
+    .btn-bl { transition: all 0.15s ease; }
+    .btn-bl:hover { background: #B3E832; }
+    .btn-bo { transition: all 0.15s ease; }
+    .btn-bo:hover { background: rgba(237,234,227,0.08); }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+<!-- ── STICKY HEADER ── -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-lg" style="background: linear-gradient(135deg, #4F46E6, #10B981);"></div>
+      <div>
+        <div class="text-sm font-semibold text-slate-900 leading-none">Neuradev</div>
+        <div class="text-[11px] text-slate-400 mt-0.5">Brand Kit — Redesign Exploration</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-lg" role="tablist">
+      <button id="tab-a" role="tab" aria-selected="true"
+        class="tab-btn px-4 py-1.5 text-sm font-medium rounded-md bg-white text-slate-900 shadow-sm">
+        Direction A — Refinement
+      </button>
+      <button id="tab-b" role="tab" aria-selected="false"
+        class="tab-btn px-4 py-1.5 text-sm font-medium rounded-md text-slate-500 hover:text-slate-900">
+        Direction B — Reinvention
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     DIRECTION A — REFINEMENT
+══════════════════════════════════════════════════════════════ -->
+<div id="dir-a">
+
+  <!-- A·1 IDENTITY -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">01 / Identity</div>
+        <h2 class="text-3xl font-bold text-slate-900">Direction A — Refinement</h2>
+        <p class="mt-2 text-slate-500 max-w-xl">Evolves the current site without breaking it. Shifts from stock blue to a richer indigo, upgrades to Inter as a deliberate type choice, cools the neutrals to Slate, and tightens component patterns. Linear / Vercel adjacency — familiar but premium.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Mark only -->
+        <div class="rounded-2xl border border-slate-200 p-8 flex flex-col items-center gap-4">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #4F46E6, #10B981);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+          </div>
+          <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Brand Mark</div>
+        </div>
+        <!-- Primary lockup -->
+        <div class="rounded-2xl border border-slate-200 p-8 flex flex-col items-center justify-center gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #4F46E6, #10B981);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+            </div>
+            <span class="text-xl font-bold text-slate-900" style="font-family: Inter, sans-serif; letter-spacing: -0.02em;">Neuradev</span>
+          </div>
+          <div class="text-xs text-slate-400 font-medium tracking-wider uppercase">Primary Lockup</div>
+        </div>
+        <!-- Dark variant -->
+        <div class="rounded-2xl bg-slate-900 p-8 flex flex-col items-center justify-center gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #4F46E6, #10B981);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+            </div>
+            <span class="text-xl font-bold text-white" style="font-family: Inter, sans-serif; letter-spacing: -0.02em;">Neuradev</span>
+          </div>
+          <div class="text-xs text-slate-500 font-medium tracking-wider uppercase">Dark Variant</div>
+        </div>
+      </div>
+      <p class="mt-8 text-slate-400 text-sm italic">"Building intelligent systems that scale."</p>
+    </div>
+  </section>
+
+  <!-- A·2 COLOR -->
+  <section class="bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">02 / Color</div>
+        <h2 class="text-3xl font-bold text-slate-900">Color System</h2>
+        <p class="mt-2 text-slate-500">Indigo primary with emerald accent, amber for warm callouts, and a cool Slate neutral ramp.</p>
+      </div>
+      <div class="space-y-8">
+        <!-- Brand colors -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Brand</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div>
+              <div class="h-20 rounded-xl mb-3 shadow-sm" style="background:#4F46E6;"></div>
+              <div class="text-sm font-semibold text-slate-900">Primary</div>
+              <div class="text-xs font-mono text-slate-500">#4F46E6</div>
+              <div class="text-xs text-slate-400 mt-1">CTAs, links, icons</div>
+            </div>
+            <div>
+              <div class="h-20 rounded-xl mb-3 shadow-sm" style="background:#4338CA;"></div>
+              <div class="text-sm font-semibold text-slate-900">Primary Hover</div>
+              <div class="text-xs font-mono text-slate-500">#4338CA</div>
+              <div class="text-xs text-slate-400 mt-1">Hover / active states</div>
+            </div>
+            <div>
+              <div class="h-20 rounded-xl mb-3 shadow-sm" style="background:#10B981;"></div>
+              <div class="text-sm font-semibold text-slate-900">Accent</div>
+              <div class="text-xs font-mono text-slate-500">#10B981</div>
+              <div class="text-xs text-slate-400 mt-1">Logo, success, tags</div>
+            </div>
+            <div>
+              <div class="h-20 rounded-xl mb-3 shadow-sm" style="background:#FBBF24;"></div>
+              <div class="text-sm font-semibold text-slate-900">Warm</div>
+              <div class="text-xs font-mono text-slate-500">#FBBF24</div>
+              <div class="text-xs text-slate-400 mt-1">Badges, highlights</div>
+            </div>
+          </div>
+        </div>
+        <!-- Neutral ramp -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Slate Neutrals</div>
+          <div class="grid grid-cols-3 sm:grid-cols-6 gap-3">
+            <div><div class="h-14 rounded-lg mb-2 border border-slate-200" style="background:#F8FAFC;"></div><div class="text-xs font-mono text-slate-600">slate-50</div></div>
+            <div><div class="h-14 rounded-lg mb-2" style="background:#E2E8F0;"></div><div class="text-xs font-mono text-slate-600">slate-200</div></div>
+            <div><div class="h-14 rounded-lg mb-2" style="background:#94A3B8;"></div><div class="text-xs font-mono text-slate-600">slate-400</div></div>
+            <div><div class="h-14 rounded-lg mb-2" style="background:#475569;"></div><div class="text-xs font-mono text-slate-600">slate-600</div></div>
+            <div><div class="h-14 rounded-lg mb-2" style="background:#1E293B;"></div><div class="text-xs font-mono text-slate-600">slate-800</div></div>
+            <div><div class="h-14 rounded-lg mb-2" style="background:#0F172A;"></div><div class="text-xs font-mono text-slate-600">slate-900</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A·3 TYPOGRAPHY -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">03 / Typography</div>
+        <h2 class="text-3xl font-bold text-slate-900">Type System</h2>
+        <p class="mt-2 text-slate-500">Inter across all weights. Tight tracking on display sizes; relaxed line-height on body.</p>
+      </div>
+      <div class="space-y-10">
+        <div class="pb-8 border-b border-slate-100">
+          <div class="font-bold text-slate-900 leading-none tracking-tighter" style="font-size: 72px; font-family: Inter, sans-serif;">Build Smarter.</div>
+          <div class="mt-3 flex flex-wrap gap-4">
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">Inter</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">800 / ExtraBold</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">72–96px · text-7xl/8xl</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">tracking-tighter</span>
+          </div>
+        </div>
+        <div class="pb-8 border-b border-slate-100">
+          <div class="font-bold text-slate-900 tracking-tight" style="font-size: 48px; font-family: Inter, sans-serif; line-height: 1.1;">Transform Your Business with AI</div>
+          <div class="mt-3 flex flex-wrap gap-3">
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">800 / text-5xl</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">tracking-tight</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">H1</span>
+          </div>
+        </div>
+        <div class="pb-8 border-b border-slate-100">
+          <div class="font-bold text-slate-900" style="font-size: 30px; font-family: Inter, sans-serif;">What We Do</div>
+          <div class="mt-3 flex flex-wrap gap-3">
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">700 / text-3xl</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">H2 / Section Title</span>
+          </div>
+        </div>
+        <div class="pb-8 border-b border-slate-100">
+          <div class="font-semibold text-slate-900" style="font-size: 20px; font-family: Inter, sans-serif;">AI Development &amp; Automation</div>
+          <div class="mt-3 flex flex-wrap gap-3">
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">600 / text-xl</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">H3 / Card Title</span>
+          </div>
+        </div>
+        <div class="pb-8 border-b border-slate-100">
+          <div class="text-slate-600 max-w-lg" style="font-size: 16px; line-height: 1.75; font-family: Inter, sans-serif;">We transform your business with cutting-edge AI solutions and intelligent automation. Get faster results, reduce costs, and stay ahead of the competition.</div>
+          <div class="mt-3 flex flex-wrap gap-3">
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">400 / text-base</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">leading-7</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">slate-600</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-slate-400" style="font-size: 13px; font-family: Inter, sans-serif; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500;">AI-Powered Development &amp; Automation</div>
+          <div class="mt-3 flex flex-wrap gap-3">
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">500 / text-xs</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">tracking-wider</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">uppercase</span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">Eyebrow / Caption</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A·4 SPACING & RADIUS -->
+  <section class="bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">04 / Tokens</div>
+        <h2 class="text-3xl font-bold text-slate-900">Spacing &amp; Radius</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Spacing scale -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Spacing Scale (base 4px)</div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">4px · p-1</div><div class="h-5 rounded bg-a-primary/30" style="width:10px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">8px · p-2</div><div class="h-5 rounded bg-a-primary/40" style="width:20px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">12px · p-3</div><div class="h-5 rounded bg-a-primary/50" style="width:30px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">16px · p-4</div><div class="h-5 rounded bg-a-primary/60" style="width:40px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">24px · p-6</div><div class="h-5 rounded bg-a-primary/70" style="width:60px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">32px · p-8</div><div class="h-5 rounded bg-a-primary/80" style="width:80px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">48px · p-12</div><div class="h-5 rounded bg-a-primary/90" style="width:120px;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right text-xs font-mono text-slate-400">80px · py-20</div><div class="h-5 rounded bg-a-primary" style="width:200px;"></div></div>
+          </div>
+        </div>
+        <!-- Border radius -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Border Radius</div>
+          <div class="grid grid-cols-3 gap-5">
+            <div class="text-center"><div class="w-14 h-14 mx-auto bg-a-primary/10 border border-a-primary/30 rounded-sm mb-2"></div><div class="text-xs font-mono text-slate-500">rounded-sm<br>2px</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto bg-a-primary/10 border border-a-primary/30 rounded-md mb-2"></div><div class="text-xs font-mono text-slate-500">rounded-md<br>6px</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto bg-a-primary/10 border border-a-primary/30 rounded-lg mb-2"></div><div class="text-xs font-mono text-slate-500">rounded-lg<br>8px</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto bg-a-primary/10 border border-a-primary/30 rounded-xl mb-2"></div><div class="text-xs font-mono text-slate-500">rounded-xl<br>12px · Buttons</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto bg-a-primary/10 border border-a-primary/30 rounded-2xl mb-2"></div><div class="text-xs font-mono text-slate-500">rounded-2xl<br>16px · Cards</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto bg-a-primary/10 border border-a-primary/30 rounded-full mb-2"></div><div class="text-xs font-mono text-slate-500">rounded-full<br>Pills / Tags</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A·5 BUTTONS -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">05 / Buttons</div>
+        <h2 class="text-3xl font-bold text-slate-900">Button System</h2>
+      </div>
+      <div class="space-y-12">
+        <!-- Variants -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">Variants</div>
+          <div class="flex flex-wrap items-center gap-4">
+            <button class="btn-ap inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white" style="background:#4F46E6;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Primary
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button class="btn-ao inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border-2 transition-all" style="border-color:#4F46E6; color:#4F46E6;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              Outlined
+            </button>
+            <button class="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:text-a-primary hover:bg-indigo-50 transition-all">
+              Ghost
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Sizes -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">Sizes</div>
+          <div class="flex flex-wrap items-center gap-4">
+            <button class="btn-ap px-4 py-2 rounded-xl text-xs font-semibold text-white" style="background:#4F46E6;">Small</button>
+            <button class="btn-ap px-6 py-3 rounded-xl text-sm font-semibold text-white" style="background:#4F46E6;">Medium</button>
+            <button class="btn-ap px-8 py-4 rounded-xl text-base font-semibold text-white" style="background:#4F46E6;">Large</button>
+          </div>
+        </div>
+        <!-- Tags & chips -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">Chips &amp; Tags</div>
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-100 text-a-primary rounded-full text-sm font-medium">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              AI-Powered
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Accent Tag</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-a-warm-bg text-amber-700 rounded-full text-sm font-medium">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              New
+            </span>
+            <span class="inline-flex items-center px-3 py-1.5 border border-slate-300 text-slate-600 rounded-full text-sm font-medium">Neutral</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A·6 CARDS -->
+  <section class="bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">06 / Surfaces</div>
+        <h2 class="text-3xl font-bold text-slate-900">Cards &amp; Surfaces</h2>
+        <p class="mt-2 text-slate-500">Borderless baseline, shadow on hover. rounded-2xl throughout.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <!-- Service card -->
+        <div class="card-a bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="w-13 h-13 w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #EEF2FF, #E0F2FE);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+          </div>
+          <div class="text-lg font-semibold text-slate-900 mb-2">AI Development</div>
+          <div class="text-sm text-slate-500 leading-6 mb-4">Custom ML models, NLP, and intelligent data analysis systems tailored to your needs.</div>
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2 text-xs text-slate-500"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Machine Learning</div>
+            <div class="flex items-center gap-2 text-xs text-slate-500"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Natural Language Processing</div>
+          </div>
+        </div>
+        <!-- Team card -->
+        <div class="card-a bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center mb-4 text-xl font-bold text-a-primary">NC</div>
+          <div class="text-base font-semibold text-slate-900">Nicolás Chávez</div>
+          <div class="text-xs font-medium text-a-primary mt-0.5 mb-3">AI Engineer</div>
+          <div class="text-sm text-slate-500 leading-6">Builds AI agents, LLM orchestration, production-grade RAG, and continuous quality evaluation.</div>
+        </div>
+        <!-- Stat card -->
+        <div class="card-a bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="w-10 h-10 rounded-xl bg-a-warm-bg flex items-center justify-center mb-5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="text-3xl font-bold text-slate-900 tracking-tight">10x</div>
+          <div class="text-sm font-medium text-slate-600 mt-1">Faster Delivery</div>
+          <div class="text-xs text-slate-400 mt-2">vs. traditional dev cycles</div>
+        </div>
+        <!-- Feature card -->
+        <div class="card-a bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #4F46E6, #7C3AED);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="text-base font-semibold text-slate-900 mb-2">Innovation First</div>
+          <div class="text-sm text-slate-500 leading-6">We stay at the forefront of AI and automation technology, ensuring you have access to the latest solutions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A·7 HERO PREVIEW -->
+  <section class="border-b border-slate-100" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);">
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-4">
+      <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase">07 / Hero Preview</div>
+    </div>
+    <div class="max-w-4xl mx-auto px-6 py-24 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8" style="background:#EEF2FF; color:#4F46E6;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        AI-Powered Development &amp; Automation
+      </div>
+      <h1 class="font-bold text-slate-900 tracking-tighter leading-none mb-6" style="font-size: clamp(48px, 8vw, 88px); font-family: Inter, sans-serif;">
+        Build Smarter.<br>
+        <span style="color:#4F46E6;">Automate Everything.</span>
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto mb-10" style="font-size: 18px; line-height: 1.75;">We transform your business with cutting-edge AI solutions and intelligent automation. Get faster results, reduce costs, and stay ahead of the competition.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <button class="btn-ap inline-flex items-center gap-2 px-7 py-4 rounded-xl font-semibold text-white" style="background:#4F46E6; font-size: 15px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Send us a message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <button class="btn-ao inline-flex items-center gap-2 px-7 py-4 rounded-xl font-semibold border-2 transition-all" style="border-color:#4F46E6; color:#4F46E6; font-size:15px; background:white;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          Book a meeting
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- A·8 ICONS & MOTION -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="text-xs font-semibold tracking-[0.18em] text-a-primary uppercase mb-3">08 / Iconography &amp; Motion</div>
+        <h2 class="text-3xl font-bold text-slate-900">Iconography &amp; Motion</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Icons -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Lucide Icons — 24px, stroke-2</div>
+          <div class="grid grid-cols-4 gap-4">
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg><span class="text-xs text-slate-400 font-mono">Brain</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="text-xs text-slate-400 font-mono">Zap</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="text-xs text-slate-400 font-mono">ArrowRight</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span class="text-xs text-slate-400 font-mono">Mail</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg><span class="text-xs text-slate-400 font-mono">Calendar</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" x2="22" y1="12" y2="12"/></svg><span class="text-xs text-slate-400 font-mono">Globe</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-xs text-slate-400 font-mono">Check</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-50"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span class="text-xs text-slate-400 font-mono">X</span></div>
+          </div>
+        </div>
+        <!-- Motion -->
+        <div>
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Motion Tokens</div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+              <div class="font-mono text-xs text-a-primary bg-indigo-50 px-2 py-1 rounded shrink-0">150ms</div>
+              <div><div class="text-sm font-medium text-slate-700">Instant feedback</div><div class="text-xs text-slate-400 mt-0.5">Icon translate, opacity flicker, focus ring</div></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+              <div class="font-mono text-xs text-a-primary bg-indigo-50 px-2 py-1 rounded shrink-0">200ms</div>
+              <div><div class="text-sm font-medium text-slate-700">Button hover, color shifts</div><div class="text-xs text-slate-400 mt-0.5">ease-out · Primary interaction layer</div></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+              <div class="font-mono text-xs text-a-primary bg-indigo-50 px-2 py-1 rounded shrink-0">300ms</div>
+              <div><div class="text-sm font-medium text-slate-700">Card lift, section bg</div><div class="text-xs text-slate-400 mt-0.5">ease-in-out · Dark mode toggle, section transitions</div></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+              <div class="font-mono text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded shrink-0">Hover lift</div>
+              <div><div class="text-sm font-medium text-slate-700">translateY(-3px) + shadow-lg</div><div class="text-xs text-slate-400 mt-0.5">Cards, service blocks — never more than 4px</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /dir-a -->
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     DIRECTION B — REINVENTION
+══════════════════════════════════════════════════════════════ -->
+<div id="dir-b" class="hidden" style="background:#0A0A0B; color:#EDEAE3;">
+
+  <!-- B·1 IDENTITY -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">00 / Identity</div>
+        <h2 class="font-serif italic text-4xl mb-2" style="color:#EDEAE3;">Direction B — Reinvention</h2>
+        <p class="max-w-xl" style="color:#8B8880; font-size:15px; line-height:1.7;">Dark-first AI-lab aesthetic. Instrument Serif for editorial display, Inter for UI, JetBrains Mono for technical metadata. Electric lime accent. Hairline borders, no shadows. Anthropic / Linear-dark adjacency.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Mark only -->
+        <div class="rounded-lg p-8 flex flex-col items-center gap-4" style="border: 1px solid #1E1E22;">
+          <div class="w-16 h-16 flex items-center justify-center" style="border: 1px solid #C6FF3D;">
+            <span class="font-mono font-bold text-xl" style="color:#C6FF3D;">ND</span>
+          </div>
+          <div class="font-mono text-xs uppercase tracking-widest" style="color:#8B8880;">Brand Mark</div>
+        </div>
+        <!-- Primary lockup -->
+        <div class="rounded-lg p-8 flex flex-col items-center justify-center gap-3" style="border: 1px solid #1E1E22;">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 flex items-center justify-center" style="border: 1px solid #C6FF3D;">
+              <span class="font-mono font-bold text-sm" style="color:#C6FF3D;">ND</span>
+            </div>
+            <span class="font-serif italic text-2xl" style="color:#EDEAE3;">Neuradev</span>
+          </div>
+          <div class="font-mono text-xs uppercase tracking-widest" style="color:#8B8880;">Primary Lockup</div>
+        </div>
+        <!-- Alternate: mono wordmark -->
+        <div class="rounded-lg p-8 flex flex-col items-center justify-center gap-3" style="border: 1px solid #1E1E22;">
+          <div class="font-mono font-medium tracking-[0.15em] uppercase" style="color:#EDEAE3; font-size: 18px; letter-spacing: 0.15em;">NEURADEV</div>
+          <div class="font-mono text-xs" style="color:#C6FF3D;">→ AI ENGINEERING</div>
+          <div class="font-mono text-xs uppercase tracking-widest mt-1" style="color:#8B8880;">Mono Alternate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·2 COLOR -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">01 / Color</div>
+        <h2 class="font-serif italic text-4xl" style="color:#EDEAE3;">Color System</h2>
+        <p class="mt-2" style="color:#8B8880; font-size:15px;">Dark canvas, bone text, acid lime accent, periwinkle secondary. No grays — only opacity-modulated values.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#0A0A0B; border: 1px solid #1E1E22;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Background</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#0A0A0B · b-bg</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">Page canvas</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#131316; border: 1px solid #1E1E22;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Surface</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#131316 · b-surface</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">Cards, panels</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#EDEAE3;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Text</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#EDEAE3 · b-text</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">Primary content</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#8B8880;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Muted</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#8B8880 · b-muted</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">Secondary text</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#C6FF3D;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Acid Lime</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#C6FF3D · b-lime</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">CTAs, accents</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#7C8CFF;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Periwinkle</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#7C8CFF · b-periwinkle</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">Links, secondary</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3" style="background:#1E1E22;"></div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">Border</div>
+          <div class="font-mono text-xs mt-0.5" style="color:#8B8880;">#1E1E22 · b-border</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">Hairline dividers</div>
+        </div>
+        <div>
+          <div class="h-20 rounded-lg mb-3 flex items-end p-2" style="background: linear-gradient(135deg, #0A0A0B 0%, #131316 50%, #1E1E22 100%); border: 1px solid #1E1E22;">
+            <span class="font-mono text-xs" style="color:#C6FF3D;">→ dark only</span>
+          </div>
+          <div class="text-sm font-semibold" style="color:#EDEAE3;">No grays</div>
+          <div class="text-xs mt-1" style="color:#8B8880;">No gray-* utilities — opacity modulate instead</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·3 TYPOGRAPHY -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">02 / Typography</div>
+        <h2 class="font-serif italic text-4xl" style="color:#EDEAE3;">Type System</h2>
+        <p class="mt-2" style="color:#8B8880; font-size:15px;">Three-face system: Instrument Serif (display), Inter (UI), JetBrains Mono (metadata).</p>
+      </div>
+      <div class="space-y-12">
+        <!-- Serif display -->
+        <div class="pb-10" style="border-bottom: 1px solid #1E1E22;">
+          <div class="font-serif italic leading-none" style="font-size: clamp(48px, 7vw, 80px); color:#EDEAE3;">We ship AI that works.</div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#C6FF3D;">Instrument Serif</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">Italic</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">text-7xl–8xl</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">Display / Hero</span>
+          </div>
+        </div>
+        <!-- Serif H1 -->
+        <div class="pb-10" style="border-bottom: 1px solid #1E1E22;">
+          <div class="font-serif italic" style="font-size: 40px; color:#EDEAE3; line-height:1.15;">Transform AI prototypes into production systems.</div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">Instrument Serif · Italic · text-4xl</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">H1 / Section Header</span>
+          </div>
+        </div>
+        <!-- Inter UI -->
+        <div class="pb-10" style="border-bottom: 1px solid #1E1E22;">
+          <div style="font-size: 16px; line-height: 1.75; color: rgba(237,234,227,0.7); max-width: 540px;">We combine deep technical expertise with an obsessive focus on shipping — from first prototype to production in weeks, not quarters.</div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">Inter · 400 · text-base · leading-7</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">Body · 70% opacity</span>
+          </div>
+        </div>
+        <!-- Mono meta -->
+        <div>
+          <div class="font-mono font-medium tracking-[0.15em] uppercase" style="color:#C6FF3D; font-size: 12px;">→ AI Engineering · Shipped to Production</div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#C6FF3D;">JetBrains Mono</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">500 · text-xs · tracking-[0.15em] · uppercase</span>
+            <span class="font-mono text-xs px-2 py-1 rounded" style="background:#1E1E22; color:#8B8880;">Eyebrow / Label / Index</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·4 SPACING & RADIUS -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">03 / Tokens</div>
+        <h2 class="font-serif italic text-4xl" style="color:#EDEAE3;">Spacing &amp; Radius</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#8B8880;">Spacing Scale</div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">4px</div><div class="h-4 rounded-sm" style="width:10px; background:#C6FF3D; opacity:0.3;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">8px</div><div class="h-4 rounded-sm" style="width:20px; background:#C6FF3D; opacity:0.4;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">16px</div><div class="h-4 rounded-sm" style="width:40px; background:#C6FF3D; opacity:0.5;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">24px</div><div class="h-4 rounded-sm" style="width:60px; background:#C6FF3D; opacity:0.6;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">32px</div><div class="h-4 rounded-sm" style="width:80px; background:#C6FF3D; opacity:0.7;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">48px</div><div class="h-4 rounded-sm" style="width:120px; background:#C6FF3D; opacity:0.85;"></div></div>
+            <div class="flex items-center gap-4"><div class="w-20 text-right font-mono text-xs" style="color:#8B8880;">80px</div><div class="h-4 rounded-sm" style="width:200px; background:#C6FF3D;"></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#8B8880;">Border Radius — Restrained</div>
+          <div class="grid grid-cols-3 gap-5">
+            <div class="text-center"><div class="w-14 h-14 mx-auto mb-2" style="border: 1px solid #C6FF3D; border-radius: 0px;"></div><div class="font-mono text-xs" style="color:#8B8880;">0<br>Buttons</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto mb-2" style="border: 1px solid #C6FF3D; border-radius: 4px;"></div><div class="font-mono text-xs" style="color:#8B8880;">rounded-sm<br>Inputs</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto mb-2" style="border: 1px solid #C6FF3D; border-radius: 8px;"></div><div class="font-mono text-xs" style="color:#8B8880;">rounded-lg<br>Cards (max)</div></div>
+            <div class="text-center"><div class="w-14 h-14 mx-auto mb-2" style="border: 1px solid #C6FF3D; border-radius: 999px;"></div><div class="font-mono text-xs" style="color:#8B8880;">rounded-full<br>CTAs / Pills</div></div>
+            <div class="col-span-2 flex items-center p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+              <p class="font-mono text-xs" style="color:#8B8880;">No rounded-2xl or higher. Sharpness signals confidence. Pillshaped only for primary CTAs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·5 BUTTONS -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">04 / Buttons</div>
+        <h2 class="font-serif italic text-4xl" style="color:#EDEAE3;">Button System</h2>
+      </div>
+      <div class="space-y-10">
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#8B8880;">Variants</div>
+          <div class="flex flex-wrap items-center gap-4">
+            <button class="btn-bl inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm" style="background:#C6FF3D; color:#0A0A0B;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Get started
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button class="btn-bo inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all" style="border: 1px solid #EDEAE3; color:#EDEAE3;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              Book a call
+            </button>
+            <button class="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70" style="color:#7C8CFF;">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#8B8880;">Chips &amp; Tags</div>
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-xs font-medium" style="background: rgba(198,255,61,0.1); color:#C6FF3D; border: 1px solid rgba(198,255,61,0.25);">→ AI Engineering</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-xs" style="background: rgba(124,140,255,0.1); color:#7C8CFF; border: 1px solid rgba(124,140,255,0.25);">Shipped to Prod</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-xs" style="background:#131316; color:#8B8880; border: 1px solid #1E1E22;">03 / Services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·6 CARDS -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">05 / Surfaces</div>
+        <h2 class="font-serif italic text-4xl" style="color:#EDEAE3;">Cards &amp; Surfaces</h2>
+        <p class="mt-2" style="color:#8B8880; font-size:15px;">Hairline borders, no shadows. Mono index labels. Lime accent marks.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        <!-- Service card B -->
+        <div class="card-b p-8 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+          <div class="font-mono text-xs mb-6" style="color:#C6FF3D;">01 /</div>
+          <div class="w-3 h-3 mb-5 rounded-sm" style="background:#C6FF3D;"></div>
+          <div class="font-semibold mb-2" style="color:#EDEAE3; font-size:16px;">AI Development</div>
+          <div class="text-sm leading-6 mb-6" style="color:#8B8880;">Custom ML models, NLP, and intelligent data analysis systems.</div>
+          <div class="space-y-1.5">
+            <div class="font-mono text-xs" style="color: rgba(237,234,227,0.5);">→ Machine Learning</div>
+            <div class="font-mono text-xs" style="color: rgba(237,234,227,0.5);">→ NLP</div>
+          </div>
+        </div>
+        <!-- Team card B -->
+        <div class="card-b p-8 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+          <div class="font-mono text-xs mb-6" style="color:#C6FF3D;">02 /</div>
+          <div class="w-12 h-12 flex items-center justify-center mb-4 font-mono font-bold" style="border: 1px solid #1E1E22; color:#C6FF3D;">NC</div>
+          <div class="font-semibold" style="color:#EDEAE3;">Nicolás Chávez</div>
+          <div class="font-mono text-xs mt-1 mb-3" style="color:#C6FF3D;">AI Engineer</div>
+          <div class="text-sm leading-6" style="color:#8B8880;">Builds AI agents, LLM orchestration, production-grade RAG systems.</div>
+        </div>
+        <!-- Stat card B -->
+        <div class="card-b p-8 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+          <div class="font-mono text-xs mb-6" style="color:#C6FF3D;">03 /</div>
+          <div class="font-bold tracking-tighter leading-none mb-2" style="font-size:52px; color:#EDEAE3; font-family:Inter,sans-serif;">10x</div>
+          <div class="font-medium" style="color:#EDEAE3; font-size:14px;">Faster Delivery</div>
+          <div class="font-mono text-xs mt-2" style="color:#8B8880;">vs. traditional cycles</div>
+        </div>
+        <!-- Feature card B -->
+        <div class="card-b p-8 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+          <div class="font-mono text-xs mb-6" style="color:#C6FF3D;">04 /</div>
+          <div class="mb-4">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="font-semibold mb-2" style="color:#EDEAE3; font-size:16px;">Innovation First</div>
+          <div class="text-sm leading-6" style="color:#8B8880;">Forefront of AI and automation technology. Latest solutions always.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·7 HERO PREVIEW -->
+  <section style="border-bottom: 1px solid #1E1E22;">
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-4">
+      <div class="font-mono text-xs uppercase tracking-[0.2em]" style="color:#C6FF3D;">06 / Hero Preview</div>
+    </div>
+    <div class="grid-bg" style="background-color:#0A0A0B;">
+      <div class="max-w-4xl mx-auto px-6 py-28 text-center">
+        <div class="font-mono text-xs tracking-[0.2em] uppercase mb-8" style="color:#C6FF3D;">→ AI Engineering · Shipped to Production</div>
+        <h1 class="font-serif italic leading-tight mb-8" style="font-size: clamp(44px, 7vw, 80px); color:#EDEAE3;">
+          We turn AI prototypes<br>into production systems.
+        </h1>
+        <p class="max-w-xl mx-auto mb-10" style="color:rgba(237,234,227,0.65); font-size:17px; line-height:1.75;">From first prototype to production in weeks. Deep technical expertise, obsessive shipping cadence, zero consultant-speak.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button class="btn-bl inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold" style="background:#C6FF3D; color:#0A0A0B; font-size:15px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Get in touch
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button class="btn-bo inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold" style="border: 1px solid rgba(237,234,227,0.3); color:#EDEAE3; font-size:15px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Book a call
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B·8 ICONS & MOTION -->
+  <section>
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="mb-12">
+        <div class="font-mono text-xs uppercase tracking-[0.2em] mb-3" style="color:#C6FF3D;">07 / Iconography &amp; Motion</div>
+        <h2 class="font-serif italic text-4xl" style="color:#EDEAE3;">Iconography &amp; Motion</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#8B8880;">Lucide Icons — 24px, stroke-2, bone white</div>
+          <div class="grid grid-cols-4 gap-3">
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEAE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg><span class="font-mono text-xs" style="color:#8B8880;">Brain</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEAE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="font-mono text-xs" style="color:#8B8880;">Zap</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="font-mono text-xs" style="color:#8B8880;">ArrowRight</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEAE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span class="font-mono text-xs" style="color:#8B8880;">Mail</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEAE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg><span class="font-mono text-xs" style="color:#8B8880;">Calendar</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEAE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" x2="22" y1="12" y2="12"/></svg><span class="font-mono text-xs" style="color:#8B8880;">Globe</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="font-mono text-xs" style="color:#8B8880;">Check</span></div>
+            <div class="flex flex-col items-center gap-2 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EDEAE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span class="font-mono text-xs" style="color:#8B8880;">X</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#8B8880;">Motion Tokens</div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-4 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+              <div class="font-mono text-xs px-2 py-1 rounded shrink-0" style="background: rgba(198,255,61,0.1); color:#C6FF3D;">100ms</div>
+              <div><div class="text-sm font-medium" style="color:#EDEAE3;">Micro feedback</div><div class="font-mono text-xs mt-0.5" style="color:#8B8880;">Icon translate, opacity flicker, cursor state</div></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+              <div class="font-mono text-xs px-2 py-1 rounded shrink-0" style="background: rgba(198,255,61,0.1); color:#C6FF3D;">150ms</div>
+              <div><div class="text-sm font-medium" style="color:#EDEAE3;">Button hover, border glow</div><div class="font-mono text-xs mt-0.5" style="color:#8B8880;">ease-out · snappier than Direction A by design</div></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+              <div class="font-mono text-xs px-2 py-1 rounded shrink-0" style="background: rgba(198,255,61,0.1); color:#C6FF3D;">250ms</div>
+              <div><div class="text-sm font-medium" style="color:#EDEAE3;">Card border shift, layout transitions</div><div class="font-mono text-xs mt-0.5" style="color:#8B8880;">ease-in-out · deliberate, not decorative</div></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-lg" style="background:#131316; border: 1px solid #1E1E22;">
+              <div class="font-mono text-xs px-2 py-1 rounded shrink-0 font-medium" style="background:#1E1E22; color:#8B8880;">No lift</div>
+              <div><div class="text-sm font-medium" style="color:#EDEAE3;">translateY(0) always</div><div class="font-mono text-xs mt-0.5" style="color:#8B8880;">Cards don't float — border brightens instead</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /dir-b -->
+
+
+<!-- ── SCRIPT ── -->
+<script>
+  const tabA = document.getElementById('tab-a');
+  const tabB = document.getElementById('tab-b');
+  const dirA = document.getElementById('dir-a');
+  const dirB = document.getElementById('dir-b');
+
+  function show(dir) {
+    const isA = dir === 'a';
+    dirA.classList.toggle('hidden', !isA);
+    dirB.classList.toggle('hidden', isA);
+    tabA.setAttribute('aria-selected', isA);
+    tabB.setAttribute('aria-selected', !isA);
+    tabA.className = 'tab-btn px-4 py-1.5 text-sm font-medium rounded-md ' + (isA ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-900');
+    tabB.className = 'tab-btn px-4 py-1.5 text-sm font-medium rounded-md ' + (!isA ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-900');
+    document.body.style.background = isA ? '' : '#0A0A0B';
+    window.scrollTo({ top: 64, behavior: 'instant' });
+  }
+
+  tabA.addEventListener('click', () => show('a'));
+  tabB.addEventListener('click', () => show('b'));
+</script>
+
+</body>
+</html>

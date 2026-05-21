@@ -1,25 +1,25 @@
-import { useLanguageContext } from './context/LanguageContext'
-import { getTranslations } from './translations'
-import MainLayout from './layout/MainLayout'
-import Home from './pages/Home'
+import { Header } from './components/sections/Header'
+import { Hero } from './components/sections/Hero'
+import { Problem } from './components/sections/Problem'
+import { AIRecommender } from './components/sections/AIRecommender'
+import { WhatWeBuild } from './components/sections/WhatWeBuild'
+import { Process } from './components/sections/Process'
+import { Diagnostic } from './components/sections/Diagnostic'
+import { Footer } from './components/sections/Footer'
 
 export default function App() {
-  const { currentLanguage } = useLanguageContext()
-  const t = getTranslations(currentLanguage)
-
-  const handleEmailClick = () => {
-    window.location.href =
-      'mailto:neuradev.aisolutions@gmail.com?subject=First contact&body=Hello, I would like to discuss...'
-  }
-
-  const handleBookingClick = () => {
-    // Replace with your actual booking link
-    window.open('https://calendly.com/neuradev-aisolutions/30min', '_blank')
-  }
-
   return (
-    <MainLayout t={t} handleBookingClick={handleBookingClick}>
-      <Home t={t} handleEmailClick={handleEmailClick} handleBookingClick={handleBookingClick} />
-    </MainLayout>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
+        <Hero />
+        <Problem />
+        <AIRecommender />
+        <WhatWeBuild />
+        <Process />
+        <Diagnostic />
+      </main>
+      <Footer />
+    </div>
   )
 }
