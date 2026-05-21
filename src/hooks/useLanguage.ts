@@ -1,45 +1,44 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks'
 
-export type Language = 'en' | 'es';
+export type Language = 'en' | 'es'
 
 export interface LanguageOption {
-  code: Language;
-  name: string;
-  flag: string;
+  code: Language
+  name: string
+  flag: string
 }
 
 export const languages: LanguageOption[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
-];
+  { code: 'en', name: 'English', flag: '🇺🇸' },
+]
+
+const STORAGE_KEY = 'language'
+
+const detectInitial = (): Language => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY) as Language | null
+    if (saved === 'es' || saved === 'en') return saved
+  } catch {
+    // ignore
+  }
+  const browser = navigator.language.split('-')[0]
+  return browser === 'en' ? 'en' : 'es'
+}
 
 export const useLanguage = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
-    // Check localStorage first, then browser language, then default to English
-    const saved = localStorage.getItem('language') as Language;
-    if (saved && languages.find(lang => lang.code === saved)) {
-      return saved;
-    }
-    
-    const browserLangRaw = navigator.language.split('-')[0];
-    const browserLang = (browserLangRaw === 'es' ? 'es' : 'en') as Language;
-    if (languages.find(lang => lang.code === browserLang)) return browserLang;
-    
-    return 'en';
-  });
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(detectInitial)
 
   useEffect(() => {
-    localStorage.setItem('language', currentLanguage);
-    document.documentElement.lang = currentLanguage;
-  }, [currentLanguage]);
+    try {
+      localStorage.setItem(STORAGE_KEY, currentLanguage)
+    } catch {
+      // ignore
+    }
+    document.documentElement.lang = currentLanguage
+  }, [currentLanguage])
 
-  const changeLanguage = (language: Language) => {
-    setCurrentLanguage(language);
-  };
+  const changeLanguage = (language: Language) => setCurrentLanguage(language)
 
-  const getCurrentLanguage = () => {
-    return languages.find(lang => lang.code === currentLanguage) || languages[0];
-  };
-
-  return { currentLanguage, changeLanguage, getCurrentLanguage };
-};
+  return { currentLanguage, changeLanguage }
+}
