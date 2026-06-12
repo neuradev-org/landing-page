@@ -16,27 +16,17 @@ import {
 import { useLang } from '../../context/LanguageContext'
 import { Container } from '../common'
 import { AgentDemo, VERTICAL_ORDER } from '../AgentDemo'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-const MARQUEE_ICONS = [
-  Scale,
-  Home,
-  Stethoscope,
-  Store,
-  Building2,
-  Wrench,
-  Dumbbell,
-  BookOpen,
-]
+const MARQUEE_ICONS = [Scale, Home, Stethoscope, Store, Building2, Wrench, Dumbbell, BookOpen]
 
 export function Hero() {
   const { t } = useLang()
   const [activeIdx, setActiveIdx] = useState(0)
   const verticals = VERTICAL_ORDER
   const active = verticals[activeIdx]
-  const cycle = () => setActiveIdx(i => (i + 1) % verticals.length)
+  const cycle = () => setActiveIdx((i) => (i + 1) % verticals.length)
 
   return (
     <section className="hero-bg relative overflow-hidden">
@@ -44,36 +34,27 @@ export function Hero() {
       <Container className="relative pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7">
-            <Badge
-              variant="outline"
-              className="pl-1.5 pr-3 py-1.5 bg-white text-ink-700 shadow-card border-ink-200/80 mb-7 rounded-full text-xs font-medium gap-2"
-            >
-              <span className="px-1.5 py-0.5 rounded-full bg-accent-soft text-accent-deep text-[10px] mono font-semibold">
-                {t.hero.badgeNew}
-              </span>
-              <span>{t.hero.badge}</span>
-            </Badge>
-
             <h1
-              className="font-extrabold tracking-tighter text-ink-900 leading-[0.95]"
-              style={{ fontSize: 'clamp(44px, 7vw, 84px)' }}
+              className="font-display font-semibold text-ink-900 leading-[1.04]"
+              style={{ fontSize: 'clamp(46px, 7vw, 76px)' }}
             >
               {t.hero.titleA}
               <br />
-              <span className="relative inline-block">
-                <span className="grad-text">{t.hero.titleB}</span>
+              <span className="relative inline-block italic font-medium text-brand pr-2">
+                {t.hero.titleB}
                 <svg
-                  className="absolute -bottom-1 left-0 w-full"
+                  className="absolute -bottom-2 left-0 w-full"
                   viewBox="0 0 300 12"
                   preserveAspectRatio="none"
                   fill="none"
+                  aria-hidden="true"
                 >
                   <path
-                    d="M2 8 C 80 2, 220 12, 298 4"
-                    stroke="#FBBF24"
-                    strokeWidth="3"
+                    d="M2 9 C 80 3, 220 11, 298 5"
+                    stroke="#E8A33D"
+                    strokeWidth="3.5"
                     strokeLinecap="round"
-                    opacity="0.7"
+                    opacity="0.85"
                   />
                 </svg>
               </span>
@@ -81,10 +62,14 @@ export function Hero() {
               {t.hero.titleC}
             </h1>
 
-            <p className="mt-7 text-ink-600 max-w-xl" style={{ fontSize: '19px', lineHeight: 1.6 }}>
+            <p
+              className="mt-8 text-ink-600 max-w-xl"
+              style={{ fontSize: 'clamp(15px, 4vw, 19px)', lineHeight: 1.65 }}
+            >
               {t.hero.desc1}
               <strong className="text-ink-900 font-semibold">{t.hero.desc2}</strong>
               {t.hero.desc3}
+              <strong className="text-ink-900 font-semibold">{t.hero.desc4}</strong>
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -120,8 +105,8 @@ export function Hero() {
                   className={cn(
                     'px-3 py-1.5 rounded-full text-xs font-semibold transition-all',
                     i === activeIdx
-                      ? 'bg-ink-900 text-white shadow-card-hover'
-                      : 'bg-white text-ink-600 border border-ink-200 hover:border-ink-900 hover:text-ink-900',
+                      ? 'bg-ink-900 text-paper shadow-card-hover'
+                      : 'bg-cream text-ink-600 border border-ink-200 hover:border-ink-900 hover:text-ink-900'
                   )}
                 >
                   {t.agentDemo.scripts[v].label}
@@ -139,17 +124,17 @@ export function Hero() {
         </div>
         <div className="marquee-mask overflow-hidden">
           <div className="marquee-track flex gap-12 items-center w-max">
-            {[0, 1].map(dup => (
+            {[0, 1].map((dup) => (
               <Fragment key={dup}>
                 {t.hero.marqueeItems.map((label, i) => {
                   const Icn = MARQUEE_ICONS[i % MARQUEE_ICONS.length]
                   return (
                     <div
                       key={`${dup}-${i}`}
-                      className="flex items-center gap-2.5 text-ink-400 shrink-0"
+                      className="flex items-center gap-2.5 text-ink-500 shrink-0"
                     >
-                      <Icn className="size-[18px]" strokeWidth={1.5} />
-                      <span className="text-sm font-medium">{label}</span>
+                      <Icn className="size-4.5 text-ink-400" strokeWidth={1.5} />
+                      <span className="font-display italic text-[17px]">{label}</span>
                     </div>
                   )
                 })}
