@@ -6,13 +6,13 @@ import { Button } from '@/components/ui/button'
 export function Footer() {
   const { t } = useLang()
   return (
-    <footer className="bg-ink-900 text-white">
+    <footer className="bg-ink-950 text-paper border-t border-white/10">
       <Container className="py-16">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-5">
-              <NeuradevLogo />
-              <span className="text-xl font-bold tracking-tight">Neuradev</span>
+              <NeuradevLogo tone="dark" />
+              <span className="font-display text-2xl font-semibold tracking-tight">Neuradev</span>
             </div>
             <p className="text-white/60 max-w-sm mb-7 text-sm leading-relaxed">
               {t.footer.tagline}

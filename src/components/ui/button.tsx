@@ -10,25 +10,25 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-[#4338CA] hover:shadow-[0_12px_28px_-6px_rgba(79,70,230,0.4)]",
+          "bg-ink-900 text-paper hover:bg-ink-950 hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-10px_rgba(30,26,19,0.45)]",
         outline:
-          "bg-white text-ink-700 border border-ink-200 hover:border-ink-900 hover:text-ink-900",
+          "bg-transparent text-ink-800 border border-ink-900/25 hover:border-ink-900 hover:bg-cream",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "text-ink-600 hover:text-ink-900 hover:bg-ink-50",
-        link: "text-primary underline-offset-4 hover:underline",
+        ghost: "text-ink-600 hover:text-ink-900 hover:bg-ink-900/5",
+        link: "text-brand underline-offset-4 hover:underline",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/30",
         light:
-          "bg-white text-ink-900 hover:bg-warm",
+          "bg-paper text-ink-900 hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-10px_rgba(0,0,0,0.4)]",
       },
       size: {
-        default: "h-9 px-4 text-sm font-medium rounded-md",
-        sm: "h-8 px-3 text-xs font-medium rounded-md",
-        cta: "h-auto px-6 py-3.5 text-sm font-semibold rounded-xl",
-        "cta-sm": "h-auto px-4 py-2 text-sm font-semibold rounded-xl",
-        "cta-md": "h-auto px-5 py-3 text-sm font-semibold rounded-xl",
-        icon: "size-9 rounded-md",
+        default: "h-9 px-4 text-sm font-medium rounded-full",
+        sm: "h-8 px-3 text-xs font-medium rounded-full",
+        cta: "h-auto px-7 py-3.5 text-sm font-semibold rounded-full",
+        "cta-sm": "h-auto px-4 py-2 text-sm font-semibold rounded-full",
+        "cta-md": "h-auto px-5 py-3 text-sm font-semibold rounded-full",
+        icon: "size-9 rounded-full",
       },
     },
     defaultVariants: {

@@ -78,7 +78,12 @@ export function AgentDemo({ active, onCycle }: AgentDemoProps) {
         className="absolute -top-4 -left-4 z-10 hidden sm:inline-flex shadow-card text-ink-600"
       />
 
-      <div className="relative rounded-3xl bg-white shadow-card-hover overflow-hidden border border-ink-200/80">
+      <div
+        className="absolute inset-0 translate-x-3 translate-y-3 rounded-3xl border border-ink-900/20 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="relative rounded-3xl bg-cream shadow-card-hover overflow-hidden border border-ink-900/15">
         <div className="px-5 py-3.5 bg-[#075E54] text-white flex items-center gap-3">
           <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-sm font-semibold">
             ND
@@ -140,7 +145,7 @@ export function AgentDemo({ active, onCycle }: AgentDemoProps) {
         </div>
       </div>
 
-      <div className="absolute -bottom-4 -right-3 sm:-right-6 bg-white rounded-2xl shadow-card-hover border border-ink-200/80 p-3 flex items-center gap-3 max-w-[260px]">
+      <div className="absolute -bottom-4 -right-3 sm:-right-6 bg-cream rounded-2xl shadow-card-hover border border-ink-900/15 p-3 flex items-center gap-3 max-w-[260px]">
         <IconBubble icon={Check} tone="accent" size="sm" />
         <div className="min-w-0">
           <div className="text-[11px] mono text-ink-400 leading-tight">{script.subtitle}</div>

@@ -43,12 +43,12 @@ function AgentsBody() {
   const { t } = useLang()
   const verticals = t.agents.verticals
   const [activeId, setActiveId] = useState<VerticalId>('inmobiliaria')
-  const active = verticals.find(v => v.id === activeId) ?? verticals[0]
+  const active = verticals.find((v) => v.id === activeId) ?? verticals[0]
 
   return (
     <div className="grid lg:grid-cols-12 gap-8 items-start fade-up">
       <div className="lg:col-span-4 flex flex-col gap-2">
-        {verticals.map(v => {
+        {verticals.map((v) => {
           const Ic = VERTICAL_ICONS[v.id] ?? Bot
           const isActive = v.id === activeId
           return (
@@ -58,23 +58,21 @@ function AgentsBody() {
               className={cn(
                 'w-full text-left rounded-2xl p-4 border transition-all flex items-start gap-3',
                 isActive
-                  ? 'bg-ink-900 text-white border-ink-900'
-                  : 'bg-white text-ink-700 border-ink-200 hover:border-ink-900',
+                  ? 'bg-ink-900 text-paper border-ink-900'
+                  : 'bg-cream text-ink-700 border-ink-200 hover:border-ink-900'
               )}
             >
               <div
                 className={cn(
                   'w-10 h-10 rounded-xl flex items-center justify-center shrink-0',
-                  isActive ? 'bg-white/10 text-accent' : 'bg-brand-soft text-brand',
+                  isActive ? 'bg-white/10 text-warm' : 'bg-brand-soft text-brand'
                 )}
               >
-                <Ic className="size-[18px]" strokeWidth={2} />
+                <Ic className="size-4.5" strokeWidth={2} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-sm">{v.label}</div>
-                <div
-                  className={cn('text-xs mt-0.5', isActive ? 'text-white/60' : 'text-ink-500')}
-                >
+                <div className={cn('text-xs mt-0.5', isActive ? 'text-white/60' : 'text-ink-500')}>
                   {v.tagline}
                 </div>
               </div>
@@ -87,14 +85,14 @@ function AgentsBody() {
       <div className="lg:col-span-8">
         <div
           key={active.id}
-          className="fade-up rounded-3xl bg-gradient-to-br from-brand-softer to-white border border-ink-200/80 p-8 lg:p-10 relative overflow-hidden"
+          className="fade-up rounded-3xl bg-cream border border-ink-900/15 shadow-card p-8 lg:p-10 relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 dot-bg opacity-40 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 dot-bg opacity-30 pointer-events-none" />
           <div className="relative">
             <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
               <Badge
                 variant="outline"
-                className="bg-white text-ink-600 border-ink-200/80 rounded-full text-xs mono px-3 py-1.5"
+                className="bg-paper text-ink-600 border-ink-200 rounded-full text-xs mono px-3 py-1.5"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-accent pulse-emerald" />
                 AGENT.{active.id.toUpperCase()}
@@ -104,7 +102,7 @@ function AgentsBody() {
               </div>
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-bold text-ink-900 leading-tight mb-2">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold text-ink-900 leading-tight mb-2">
               {active.label}
             </h3>
             <p className="text-ink-600 mb-7">{active.tagline}</p>
@@ -125,9 +123,9 @@ function AgentsBody() {
               </div>
             )}
 
-            <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-ink-200/80">
+            <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-ink-900/10">
               <div>
-                <div className="text-4xl font-extrabold text-ink-900 tracking-tighter">
+                <div className="font-display text-4xl font-semibold italic text-ink-900">
                   {active.kpi.value}
                 </div>
                 <div className="text-xs text-ink-500 mt-1 leading-tight">{active.kpi.label}</div>
@@ -174,7 +172,13 @@ function PipelineArrow() {
           strokeWidth="1.5"
           strokeDasharray="3 2"
         >
-          <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.6s" repeatCount="indefinite" />
+          <animate
+            attributeName="stroke-dashoffset"
+            from="0"
+            to="-10"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
         </line>
         <path
           d="M28 6l8 6-8 6"
@@ -195,7 +199,7 @@ function InternalBody() {
   const [pipeIdx, setPipeIdx] = useState(0)
 
   useEffect(() => {
-    const id = setInterval(() => setPipeIdx(i => (i + 1) % data.pipelineInputs.length), 2200)
+    const id = setInterval(() => setPipeIdx((i) => (i + 1) % data.pipelineInputs.length), 2200)
     return () => clearInterval(id)
   }, [data.pipelineInputs.length])
 
@@ -212,8 +216,8 @@ function InternalBody() {
 
   return (
     <div className="fade-up">
-      <div className="mb-6 rounded-3xl bg-ink-900 text-white p-6 lg:p-8 relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-[0.08] pointer-events-none" />
+      <div className="mb-6 rounded-3xl bg-ink-950 text-paper p-6 lg:p-8 relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[200px] rounded-full bg-brand opacity-30 blur-3xl pointer-events-none" />
         <div className="relative">
           <div className="flex items-center gap-2 mb-6">
@@ -239,7 +243,7 @@ function InternalBody() {
                         'flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all',
                         isActive
                           ? 'bg-warm/15 border border-warm/40 text-white'
-                          : 'border border-transparent text-white/50',
+                          : 'border border-transparent text-white/50'
                       )}
                     >
                       <Ic
@@ -255,7 +259,7 @@ function InternalBody() {
 
             <PipelineArrow />
 
-            <div className="rounded-2xl bg-gradient-to-br from-brand to-purple-700 p-5 lg:p-6 relative overflow-hidden">
+            <div className="rounded-2xl bg-gradient-to-br from-brand to-brand-deep p-5 lg:p-6 relative overflow-hidden">
               <div className="absolute inset-0 dot-bg opacity-30 pointer-events-none" />
               <div className="relative">
                 <div className="text-[10px] mono tracker uppercase text-white/70 font-semibold mb-3">
@@ -292,7 +296,7 @@ function InternalBody() {
                         'flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all',
                         isActive
                           ? 'bg-accent/15 border border-accent/40 text-white'
-                          : 'border border-transparent text-white/50',
+                          : 'border border-transparent text-white/50'
                       )}
                     >
                       <Ic
@@ -324,16 +328,18 @@ function InternalBody() {
                   variant="secondary"
                   className={cn(
                     'rounded-md text-[10px] mono font-semibold tracker uppercase px-2 py-0.5',
-                    tagClass[c],
+                    tagClass[c]
                   )}
                 >
                   {cat.tag}
                 </Badge>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-ink-900 leading-snug">{cat.title}</h3>
+              <h3 className="font-display text-xl font-semibold mb-2 text-ink-900 leading-snug">
+                {cat.title}
+              </h3>
               <p className="text-sm text-ink-500 leading-relaxed mb-5">{cat.desc}</p>
-              <div className="flex flex-col gap-2 pt-4 border-t border-ink-200/60">
-                {cat.items.map(it => (
+              <div className="flex flex-col gap-2 pt-4 border-t border-ink-900/10">
+                {cat.items.map((it) => (
                   <div key={it} className="flex items-start gap-2.5 text-sm text-ink-700">
                     <div className="w-4 h-4 rounded mt-0.5 flex items-center justify-center shrink-0 bg-accent-soft border border-accent/30">
                       <Check className="size-2.5 text-accent-deep" strokeWidth={2.5} />
@@ -356,40 +362,41 @@ export function WhatWeBuild() {
   const w = t.whatWeBuild
 
   return (
-    <section id="what-we-build" className="bg-white">
+    <section id="what-we-build" className="bg-paper">
       <Container className="py-24 lg:py-32">
         <div className="max-w-3xl mb-10">
           <Eyebrow color="accent">{w.eyebrow}</Eyebrow>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-ink-900 leading-[1.05]">
+          <h2 className="font-display text-4xl md:text-5xl font-semibold text-ink-900 leading-[1.08]">
             {w.title1} <br />
-            <span className="text-ink-400">{w.title2}</span>
+            <span className="italic font-medium text-ink-500">{w.title2}</span>
           </h2>
-          <p className="mt-5 text-ink-600 text-lg leading-relaxed">{w.subtitle}</p>
+          <p className="mt-6 text-ink-600 text-lg leading-relaxed">{w.subtitle}</p>
         </div>
 
-        <div className="mb-10 inline-flex items-center gap-1 p-1 bg-ink-100 rounded-2xl border border-ink-200">
+        <div className="mb-10 inline-flex items-center gap-1 p-1 bg-ink-900/5 rounded-full border border-ink-900/10">
           <button
             onClick={() => setTab('agents')}
             className={cn(
-              'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center gap-2',
-              tab === 'agents' ? 'bg-white text-ink-900 shadow-card' : 'text-ink-500 hover:text-ink-900',
+              'px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2',
+              tab === 'agents'
+                ? 'bg-ink-900 text-paper shadow-card'
+                : 'text-ink-500 hover:text-ink-900'
             )}
           >
-            <Bot
-              className={cn('size-3.5', tab === 'agents' ? 'text-brand' : '')}
-              strokeWidth={2}
-            />
+            <Bot className={cn('size-3.5', tab === 'agents' ? 'text-warm' : '')} strokeWidth={2} />
             {w.tabAgents}
           </button>
           <button
             onClick={() => setTab('internal')}
             className={cn(
-              'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center gap-2',
-              tab === 'internal' ? 'bg-white text-ink-900 shadow-card' : 'text-ink-500 hover:text-ink-900',
+              'px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2',
+              tab === 'internal'
+                ? 'bg-ink-900 text-paper shadow-card'
+                : 'text-ink-500 hover:text-ink-900'
             )}
           >
             <Zap
-              className={cn('size-3.5', tab === 'internal' ? 'text-accent' : '')}
+              className={cn('size-3.5', tab === 'internal' ? 'text-warm' : '')}
               strokeWidth={2}
             />
             {w.tabInternal}
