@@ -26,6 +26,7 @@ import { CheckBullet, Container, Eyebrow, IconBubble, MetaTag } from '../common'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
 
 const VERTICAL_ICONS: Record<VerticalId, LucideIcon> = {
@@ -46,8 +47,43 @@ function AgentsBody() {
   const active = verticals.find((v) => v.id === activeId) ?? verticals[0]
 
   return (
-    <div className="grid lg:grid-cols-12 gap-8 items-start fade-up">
-      <div className="lg:col-span-4 flex flex-col gap-2">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start fade-up">
+      <Carousel opts={{ align: 'start' }} className="lg:hidden -mx-1">
+        <CarouselContent className="-ml-3 px-1">
+          {verticals.map((v) => {
+            const Ic = VERTICAL_ICONS[v.id] ?? Bot
+            const isActive = v.id === activeId
+            return (
+              <CarouselItem key={v.id} className="pl-3 basis-[68%] sm:basis-[42%]">
+                <button
+                  onClick={() => setActiveId(v.id)}
+                  className={cn(
+                    'w-full h-full text-left rounded-2xl p-4 border transition-all flex flex-col gap-2',
+                    isActive
+                      ? 'bg-ink-900 text-paper border-ink-900'
+                      : 'bg-cream text-ink-700 border-ink-200'
+                  )}
+                >
+                  <div
+                    className={cn(
+                      'w-10 h-10 rounded-xl flex items-center justify-center shrink-0',
+                      isActive ? 'bg-white/10 text-warm' : 'bg-brand-soft text-brand'
+                    )}
+                  >
+                    <Ic className="size-4.5" strokeWidth={2} />
+                  </div>
+                  <div className="font-semibold text-sm">{v.label}</div>
+                  <div className={cn('text-xs', isActive ? 'text-white/60' : 'text-ink-500')}>
+                    {v.tagline}
+                  </div>
+                </button>
+              </CarouselItem>
+            )
+          })}
+        </CarouselContent>
+      </Carousel>
+
+      <div className="hidden lg:col-span-4 lg:flex flex-col gap-2">
         {verticals.map((v) => {
           const Ic = VERTICAL_ICONS[v.id] ?? Bot
           const isActive = v.id === activeId
