@@ -1,1 +1,202 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Warm ink scale — charcoal with a paper undertone */
+  --color-ink-50: #F4F0E7;
+  --color-ink-100: #ECE6D9;
+  --color-ink-200: #DCD4C2;
+  --color-ink-300: #C2B8A2;
+  --color-ink-400: #9C917B;
+  --color-ink-500: #7A7060;
+  --color-ink-600: #5E5546;
+  --color-ink-700: #463F33;
+  --color-ink-800: #2F2A21;
+  --color-ink-900: #1E1A13;
+  --color-ink-950: #14110B;
+
+  /* Paper surfaces */
+  --color-paper: #F7F3EA;
+  --color-paper-deep: #EFE9DC;
+  --color-cream: #FCFAF4;
+
+  --color-brand: #4338CA;
+  --color-brand-deep: #352A9B;
+  --color-brand-soft: #E7E4F8;
+  --color-brand-softer: #F0EEF9;
+
+  --color-accent: #11866A;
+  --color-accent-soft: #DFEDE2;
+  --color-accent-deep: #0B6B52;
+
+  --color-warm: #E8A33D;
+  --color-warm-soft: #F6E8CB;
+  --color-warm-deep: #95621B;
+
+  --radius: 0.75rem;
+}
+
+/* ── shadcn semantic tokens mapped onto the brand palette ── */
+@theme inline {
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink-900);
+
+  --color-card: var(--color-cream);
+  --color-card-foreground: var(--color-ink-900);
+
+  --color-popover: var(--color-cream);
+  --color-popover-foreground: var(--color-ink-900);
+
+  --color-primary: var(--color-ink-900);
+  --color-primary-foreground: var(--color-paper);
+
+  --color-secondary: var(--color-ink-100);
+  --color-secondary-foreground: var(--color-ink-900);
+
+  --color-muted: var(--color-ink-50);
+  --color-muted-foreground: var(--color-ink-500);
+
+  --color-accent-token: var(--color-accent);
+  --color-accent-token-foreground: #FFFFFF;
+
+  --color-destructive: var(--color-warm-deep);
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: var(--color-ink-200);
+  --color-input: var(--color-ink-200);
+  --color-ring: var(--color-brand);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink-900);
+    background: var(--color-paper);
+  }
+  ::selection {
+    background: var(--color-warm-soft);
+    color: var(--color-ink-900);
+  }
+}
+
+/* ── Film grain over everything ─────────────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Shadows (warm-tinted) ──────────────────────────── */
+.shadow-card { box-shadow: 0 1px 2px rgba(30, 26, 19, 0.05), 0 6px 18px -4px rgba(30, 26, 19, 0.07); }
+.shadow-card-hover { box-shadow: 0 16px 40px -12px rgba(30, 26, 19, 0.18), 0 4px 10px -2px rgba(30, 26, 19, 0.06); }
+.shadow-cta { box-shadow: 0 14px 30px -8px rgba(30, 26, 19, 0.35); }
+
+/* ── Typographic helpers ────────────────────────────── */
+.mono { font-family: var(--font-mono); }
+.tracker { letter-spacing: 0.12em; }
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+/* ── Backgrounds & patterns ─────────────────────────── */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 70% 55% at 15% -5%, rgba(67, 56, 202, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 95% 5%, rgba(17, 134, 106, 0.07) 0%, transparent 55%),
+    var(--color-paper);
+}
+.dot-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(30, 26, 19, 0.18) 1px, transparent 0);
+  background-size: 26px 26px;
+}
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Scroll reveal ──────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Marquee ─────────────────────────────────────────── */
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── Fade up animation ──────────────────────────────── */
+.fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Pulsing emerald dot ────────────────────────────── */
+.pulse-emerald {
+  animation: pulseEmerald 1.8s ease-in-out infinite;
+}
+@keyframes pulseEmerald {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(17, 134, 106, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(17, 134, 106, 0); }
+}
+
+/* ── Neural-brain logo node pulse ───────────────────── */
+.nd-pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: ndPulse 2.6s ease-in-out infinite;
+}
+@keyframes ndPulse {
+  0%, 100% { opacity: 0.12; transform: scale(0.85); }
+  50% { opacity: 0.32; transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nd-pulse { animation: none; }
+}
+
+/* ── Caret blink for chat hint ──────────────────────── */
+.caret { animation: blink 1.1s steps(2) infinite; }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+/* ── Hide scrollbar ─────────────────────────────────── */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }

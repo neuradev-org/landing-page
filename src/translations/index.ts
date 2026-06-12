@@ -1,262 +1,1622 @@
 import type { Language } from '../hooks/useLanguage'
 
+export type VerticalId =
+  | 'contable'
+  | 'inmobiliaria'
+  | 'juridico'
+  | 'ecommerce'
+  | 'clinica'
+  | 'gimnasio'
+  | 'taller'
+  | 'academia'
+
+export interface NavT {
+  problem: string
+  build: string
+  recommender: string
+  process: string
+  diagnostic: string
+  langLabel: string
+}
+
+export interface HeroT {
+  badgeNew: string
+  badge: string
+  titleA: string
+  titleB: string
+  titleC: string
+  desc1: string
+  desc2: string
+  desc3: string
+  desc4: string
+  ctaPrimary: string
+  ctaSecondary: string
+  trust: string
+  tryLabel: string
+  marqueeTitle: string
+  marqueeItems: string[]
+}
+
+export interface ProblemFailT {
+  title: string
+  desc: string
+}
+
+export interface ProblemT {
+  eyebrow: string
+  title1: string
+  title2: string
+  subtitle: string
+  failLabel: string
+  fails: ProblemFailT[]
+  solveLabel: string
+  solveText1: string
+  solveText2: string
+}
+
+export interface WhatWeBuildT {
+  eyebrow: string
+  title1: string
+  title2: string
+  subtitle: string
+  tabAgents: string
+  tabInternal: string
+}
+
+export interface VerticalT {
+  id: VerticalId
+  label: string
+  tagline: string
+  bullets: string[]
+  note?: string
+  kpi: { value: string; label: string }
+}
+
+export interface AgentsT {
+  eyebrow: string
+  title1: string
+  title2: string
+  subtitle: string
+  useCaseLabel: string
+  ctaCard: string
+  metaTags: [string, string][]
+  verticals: VerticalT[]
+}
+
+export interface CategoryT {
+  tag: string
+  title: string
+  desc: string
+  items: string[]
+}
+
+export interface InternalT {
+  eyebrow: string
+  title1: string
+  title2: string
+  subtitle: string
+  pipelineLabel: string
+  pipelineInput: string
+  pipelineProcess: string
+  pipelineOutput: string
+  pipelineInputs: string[]
+  pipelineOutputs: string[]
+  categories: CategoryT[]
+  footnote: string
+}
+
+export interface RecommenderT {
+  eyebrow: string
+  title1: string
+  title2: string
+  subtitle: string
+  inputLabel: string
+  placeholder: string
+  designing: string
+  generate: string
+  tryExample: string
+  examples: string[]
+  emptyTitle: string
+  emptyDesc: string
+  emptyPower: string
+  loadTitle: string
+  loadDesc: string
+  errorTitle: string
+  errorMsg: string
+  errorCta: string
+  readyLabel: string
+  whatItSolves: string
+  integrations: string
+  firstStepLabel: string
+  resultCta: string
+  adjust: string
+  limitTitle: string
+  limitDesc: string
+  limitCta: string
+}
+
+export interface ProcessStepT {
+  title: string
+  desc: string
+  duration: string
+}
+
+export interface ProcessT {
+  eyebrow: string
+  title1: string
+  title2: string
+  subtitle: string
+  avgTime: string
+  steps: ProcessStepT[]
+}
+
+export interface DiagnosticT {
+  title1: string
+  title2: string
+  title3: string
+  desc1: string
+  desc2: string
+  desc3: string
+  bullets: string[]
+  formTitle: string
+  formSubtitle: string
+  nameLabel: string
+  namePlaceholder: string
+  emailLabel: string
+  emailPlaceholder: string
+  bizLabel: string
+  bizOptions: [string, string][]
+  submit: string
+  orWriteUs: string
+  sentTitle: string
+  sentDesc1: string
+  sentDescYourMail: string
+  sentDesc2: string
+}
+
+export interface FooterT {
+  tagline: string
+  cta: string
+  servicesTitle: string
+  servicesLinks: [string, string][]
+  contactTitle: string
+  region: string
+  hours: string
+  copy: string
+  privacy: string
+  terms: string
+  version: string
+}
+
+export interface AgentScriptMsgT {
+  from: 'lead' | 'agent' | 'system'
+  text: string
+  delay: number
+  typing?: number
+}
+
+export interface AgentScriptT {
+  label: string
+  subtitle: string
+  title: string
+  messages: AgentScriptMsgT[]
+}
+
+export interface AgentDemoT {
+  online: string
+  today: string
+  hint: string
+  tag: string
+  responseFooter: string
+  scripts: Record<VerticalId, AgentScriptT>
+}
+
 export interface Translations {
-  // Header
-  about: string
-  services: string
-  whyChooseUs: string
-  getStarted: string
-  team: string
-
-  // Team Section
-  teamIntro: string
-  aiEngineer: string
-  softwareEngineer: string
-  devopsEngineer: string
-  nicolasDesc: string
-  tomasDesc: string
-  sebastianDesc: string
-
-  // Hero Section
-  heroTagline: string
-  heroTitle1: string
-  heroTitle2: string
-  heroDescription: string
-  sendMessage: string
-  bookMeeting: string
-
-  // About Section
-  whoWeAre: string
-  whoWeAreDescription: string
-  pioneersTitle: string
-  pioneersDescription1: string
-  pioneersDescription2: string
-  aiFirst: string
-  aiFirstDesc: string
-  lightningFast: string
-  lightningFastDesc: string
-
-  // Services Section
-  whatWeDo: string
-  whatWeDoDescription: string
-  aiDevelopment: string
-  aiDevelopmentDesc: string
-  smartAutomation: string
-  smartAutomationDesc: string
-  customSolutions: string
-  customSolutionsDesc: string
-  machineLearning: string
-  nlp: string
-  predictiveAnalytics: string
-  processAutomation: string
-  workflowOptimization: string
-  integrationSolutions: string
-  webApplications: string
-  apiDevelopment: string
-  systemIntegration: string
-
-  // Why Choose Us Section
-  whyChooseUsTitle: string
-  whyChooseUsDescription: string
-  innovationFirst: string
-  innovationFirstDesc: string
-  maximumEfficiency: string
-  maximumEfficiencyDesc: string
-  fastResults: string
-  fastResultsDesc: string
-
-  // CTA Section
-  ctaTitle: string
-  ctaDescription: string
-
-  // Footer
-  readyToStart: string
-  footerText: string
+  code: Language
+  nav: NavT
+  hero: HeroT
+  problem: ProblemT
+  whatWeBuild: WhatWeBuildT
+  agents: AgentsT
+  internal: InternalT
+  recommender: RecommenderT
+  process: ProcessT
+  diagnostic: DiagnosticT
+  footer: FooterT
+  agentDemo: AgentDemoT
+  recommenderPrompt: (biz: string) => string
 }
 
-const translations: Record<Language, Translations> = {
-  en: {
-    // Header
-    about: 'About',
-    services: 'Services',
-    whyChooseUs: 'Why Choose Us',
-    getStarted: 'Get Started',
-    team: 'Team',
-
-    // Team Section
-    teamIntro: 'A complementary group of specialists taking your AI projects to production.',
-    aiEngineer: 'AI Engineer',
-    softwareEngineer: 'Software Engineer',
-    devopsEngineer: 'DevOps Engineer',
-    nicolasDesc:
-      'Leads the construction of AI agents, LLM orchestration (tools, function calling), production-grade RAG, and continuous quality evaluation.',
-    tomasDesc:
-      'Full‑stack expert focused on robust API design, automated testing, performance, and solid architecture practices.',
-    sebastianDesc:
-      'AWS specialist in Infrastructure as Code, CI/CD, observability, security, and high availability in production.',
-
-    // Hero Section
-    heroTagline: 'AI-Powered Development & Automation',
-    heroTitle1: 'Build Smarter.',
-    heroTitle2: 'Automate Everything.',
-    heroDescription:
-      'We transform your business with cutting-edge AI solutions and intelligent automation. Get faster results, reduce costs, and stay ahead of the competition.',
-    sendMessage: 'Send us a message',
-    bookMeeting: 'Book a meeting',
-
-    // About Section
-    whoWeAre: 'Who We Are',
-    whoWeAreDescription:
-      'A forward-thinking team of AI specialists and automation experts dedicated to revolutionizing how businesses operate in the digital age.',
-    pioneersTitle: 'Pioneers in AI Innovation',
-    pioneersDescription1:
-      "We're not just developers – we're visionaries who see the transformative power of artificial intelligence and automation. Our mission is to make cutting-edge technology accessible to businesses of all sizes.",
-    pioneersDescription2:
-      "With a fresh perspective and deep technical expertise, we focus on delivering solutions that don't just work today, but evolve with your business tomorrow.",
-    aiFirst: 'AI-First',
-    aiFirstDesc: 'Every solution powered by intelligent automation',
-    lightningFast: 'Lightning Fast',
-    lightningFastDesc: 'Rapid development and deployment cycles',
-
-    // Services Section
-    whatWeDo: 'What We Do',
-    whatWeDoDescription:
-      'From AI-powered applications to intelligent automation systems, we create solutions that transform your business operations.',
-    aiDevelopment: 'AI Development',
-    aiDevelopmentDesc:
-      'Custom AI solutions including machine learning models, natural language processing, and intelligent data analysis systems tailored to your needs.',
-    smartAutomation: 'Smart Automation',
-    smartAutomationDesc:
-      'Intelligent workflow automation that learns and adapts, eliminating repetitive tasks and optimizing your business processes for maximum efficiency.',
-    customSolutions: 'Custom Solutions',
-    customSolutionsDesc:
-      'Bespoke applications and systems designed specifically for your unique business requirements, built with scalability and future growth in mind.',
-    machineLearning: 'Machine Learning Models',
-    nlp: 'Natural Language Processing',
-    predictiveAnalytics: 'Predictive Analytics',
-    processAutomation: 'Process Automation',
-    workflowOptimization: 'Workflow Optimization',
-    integrationSolutions: 'Integration Solutions',
-    webApplications: 'Web Applications',
-    apiDevelopment: 'API Development',
-    systemIntegration: 'System Integration',
-
-    // Why Choose Us Section
-    whyChooseUsTitle: 'Why Choose Us',
-    whyChooseUsDescription:
-      'We combine innovation with reliability to deliver exceptional results that drive your business forward.',
-    innovationFirst: 'Innovation First',
-    innovationFirstDesc:
-      'We stay at the forefront of AI and automation technology, ensuring you always have access to the latest and most effective solutions.',
-    maximumEfficiency: 'Maximum Efficiency',
-    maximumEfficiencyDesc:
-      'Our solutions are designed to maximize efficiency and minimize waste, helping you achieve more with less effort and resources.',
-    fastResults: 'Fast Results',
-    fastResultsDesc:
-      'We believe in rapid implementation and quick wins. See measurable improvements in your business operations within weeks, not months.',
-
-    // CTA Section
-    ctaTitle: 'Ready to Transform Your Business?',
-    ctaDescription:
-      "Let's discuss how AI and automation can revolutionize your operations. Get started with a free consultation today.",
-
-    // Footer
-    readyToStart: 'Ready to get started?',
-    footerText: '© 2025 AIFlow. Building the future with intelligent automation.',
+const es: Translations = {
+  code: 'es',
+  nav: {
+    problem: 'El problema',
+    build: 'Lo que hacemos',
+    recommender: 'Recomendador',
+    process: 'Cómo trabajamos',
+    diagnostic: 'Diagnóstico gratis',
+    langLabel: 'ES',
   },
-
-  es: {
-    // Header
-    about: 'Acerca de',
-    services: 'Servicios',
-    whyChooseUs: 'Por Qué Elegirnos',
-    getStarted: 'Comenzar',
-    team: 'Equipo',
-
-    // Team Section
-    teamIntro:
-      'Un grupo complementario de especialistas que llevan tus proyectos de IA a producción.',
-    aiEngineer: 'Ingeniero de IA',
-    softwareEngineer: 'Ingeniero de Software',
-    devopsEngineer: 'Ingeniero DevOps',
-    nicolasDesc:
-      'Responsable de construcción de agentes de IA, orquestación de LLMs (tools, function calling), RAG productivo y evaluación continua de calidad.',
-    tomasDesc:
-      'Experto full‑stack en diseño de APIs robustas, pruebas automatizadas, rendimiento y buenas prácticas de arquitectura.',
-    sebastianDesc:
-      'Especialista en AWS, Infraestructura como Código, CI/CD, observabilidad, seguridad y alta disponibilidad en producción.',
-
-    // Hero Section
-    heroTagline: 'Desarrollo y Automatización Impulsados por IA',
-    heroTitle1: 'Construye Más Inteligente.',
-    heroTitle2: 'Automatiza Todo.',
-    heroDescription:
-      'Transformamos tu negocio con soluciones de IA de vanguardia y automatización inteligente. Obtén resultados más rápidos, reduce costos y mantente por delante de la competencia.',
-    sendMessage: 'Envíanos un mensaje',
-    bookMeeting: 'Reservar una reunión',
-
-    // About Section
-    whoWeAre: 'Quiénes Somos',
-    whoWeAreDescription:
-      'Un equipo de Ingenieros de Software, expertos en IA y automatización dedicados a revolucionar la forma en que las empresas operan en la era digital.',
-    pioneersTitle: 'Ingenieros de IA',
-    pioneersDescription1:
-      'No somos solo desarrolladores – somos visionarios que ven el poder transformador de la inteligencia artificial y la automatización. Nuestra misión es llevar la IA a todas las empresas, haciéndola accesible para todos.',
-    pioneersDescription2:
-      'Con una perspectiva fresca y profunda experiencia técnica, nos enfocamos en entregar soluciones que no solo funcionan hoy, sino que evolucionan con tu negocio mañana.',
-    aiFirst: 'IA Primero',
-    aiFirstDesc: 'Cada solución impulsada por automatización inteligente',
-    lightningFast: 'Súper Rápido',
-    lightningFastDesc: 'Ciclos rápidos de desarrollo e implementación',
-
-    // Services Section
-    whatWeDo: 'Qué Hacemos',
-    whatWeDoDescription:
-      'Desde aplicaciones impulsadas por IA hasta sistemas de automatización inteligente, creamos soluciones que transforman las operaciones de tu negocio.',
-    aiDevelopment: 'Desarrollo de IA',
-    aiDevelopmentDesc:
-      'Soluciones de IA personalizadas incluyendo modelos de aprendizaje automático, procesamiento de lenguaje natural y sistemas de análisis de datos inteligentes adaptados a tus necesidades.',
-    smartAutomation: 'Automatización Inteligente',
-    smartAutomationDesc:
-      'Automatización de flujos de trabajo inteligente que aprende y se adapta, eliminando tareas repetitivas y optimizando tus procesos de negocio para máxima eficiencia.',
-    customSolutions: 'Soluciones Personalizadas',
-    customSolutionsDesc:
-      'Aplicaciones y sistemas a medida diseñados específicamente para tus requisitos únicos de negocio, construidos con escalabilidad y crecimiento futuro en mente.',
-    machineLearning: 'Modelos de Aprendizaje Automático',
-    nlp: 'Procesamiento de Lenguaje Natural',
-    predictiveAnalytics: 'Análisis Predictivo',
-    processAutomation: 'Automatización de Procesos',
-    workflowOptimization: 'Optimización de Flujos de Trabajo',
-    integrationSolutions: 'Soluciones de Integración',
-    webApplications: 'Aplicaciones Web',
-    apiDevelopment: 'Desarrollo de APIs',
-    systemIntegration: 'Integración de Sistemas',
-
-    // Why Choose Us Section
-    whyChooseUsTitle: 'Por Qué Elegirnos',
-    whyChooseUsDescription:
-      'Combinamos innovación con confiabilidad para entregar resultados excepcionales que impulsan tu negocio hacia adelante.',
-    innovationFirst: 'Innovación Primero',
-    innovationFirstDesc:
-      'Nos mantenemos a la vanguardia de la tecnología de IA y automatización, asegurando que siempre tengas acceso a las soluciones más recientes y efectivas.',
-    maximumEfficiency: 'Máxima Eficiencia',
-    maximumEfficiencyDesc:
-      'Nuestras soluciones están diseñadas para maximizar la eficiencia y minimizar el desperdicio, ayudándote a lograr más con menos esfuerzo y recursos.',
-    fastResults: 'Resultados Rápidos',
-    fastResultsDesc:
-      'Creemos en la implementación rápida y victorias tempranas. Ve mejoras medibles en las operaciones de tu negocio en semanas, no meses.',
-
-    // CTA Section
-    ctaTitle: '¿Listo para Transformar tu Negocio?',
-    ctaDescription:
-      'Hablemos sobre cómo la IA y automatización pueden revolucionar tus operaciones. Comienza con una consulta gratuita hoy.',
-
-    // Footer
-    readyToStart: '¿Listo para comenzar?',
-    footerText: '© 2025 AIFlow. Construyendo el futuro con automatización inteligente.',
+  hero: {
+    badgeNew: 'NUEVO',
+    badge: 'AI Agents para PyMEs · Disponibles ahora',
+    titleA: 'Tu negocio esta perdiendo horas',
+    titleB: 'todos los dias',
+    titleC: 'la IA lo soluciona.',
+    desc1: 'Ayudamos ',
+    desc2: 'a empresas a integrar IA',
+    desc3:
+      ' en sus operaciones diarias. Construyendo agentes que automatizan tareas repetitivas, se integran a procesos reales y ayudan a los equipos a operar más rápido y',
+    desc4: ' enfocarse en lo realmente importante.',
+    ctaPrimary: 'Reservá tu diagnóstico — 30 min, gratis',
+    ctaSecondary: 'Ver cómo funciona',
+    trust: 'Sin equipo técnico interno requerido',
+    tryLabel: 'Probá un agente →',
+    marqueeTitle: 'Construido para PyMEs en LATAM',
+    marqueeItems: [
+      'Estudios contables',
+      'Inmobiliarias',
+      'Clínicas',
+      'E-commerce',
+      'Estudios jurídicos',
+      'Talleres',
+      'Gimnasios',
+      'Academias',
+    ],
   },
+  problem: {
+    eyebrow: '01 / El problema',
+    title1: 'La mayoría de los “AI Agents” que ves en LinkedIn',
+    title2: 'no llegan a ser realemente útiles.',
+    subtitle:
+      'Después de meses construyendo agentes para negocios reales, identificamos los tres motivos por los que el 90% no tienen exito.',
+    failLabel: 'Falla',
+    fails: [
+      {
+        title: 'No genera resultados',
+        desc: 'Responder mensajes no alcanza. Si no automatiza tareas reales, reduce costos o genera ventas, no es una solución.',
+      },
+      {
+        title: 'No aprende de tu negocio',
+        desc: 'Las plantillas genéricas suenan a plantilla. Si no toma tus respuestas reales, tus precios reales y tus procesos reales el cliente lo nota en el primer mensaje.',
+      },
+      {
+        title: 'Mantenerlo se vuelve un problema',
+        desc: 'Muchos agentes funcionan bien al principio. Después aparecen prompts imposibles de mantener, errores y costos que escalan rápido',
+      },
+    ],
+    solveLabel: 'Cómo lo resolvemos',
+    solveText1: 'Construimos agentes específicos a tus procesos reales, no plantillas.',
+    solveText2:
+      ' Diseñados para automatizar trabajo útil, integrarse con tus herramientas y operar en producción desde el primer día.',
+  },
+  whatWeBuild: {
+    eyebrow: '03 / Lo que construimos',
+    title1: 'Agentes que atienden a tus clientes.',
+    title2: 'Automatizaciones que limpian tu back-office.',
+    subtitle: 'Elegí el lado que más te duele. Podés empezar por uno y sumar el otro después.',
+    tabAgents: 'Para tus clientes',
+    tabInternal: 'Para tu operación',
+  },
+  agents: {
+    eyebrow: '02 / Agentes que atienden clientes',
+    title1: 'Un AI Agent no es un chatbot.',
+    title2: 'Es un trabajador automatizado que opera dentro de tu negocio.',
+    subtitle:
+      'Responde, califica, agenda e integra de cara al cliente. Elegí tu vertical para ver el caso de uso concreto.',
+    useCaseLabel: 'Caso de uso',
+    ctaCard: 'Reservá tu diagnóstico',
+    metaTags: [
+      ['Integra', 'WhatsApp · Gmail · CRM'],
+      ['Aprende', 'De tus respuestas reales'],
+      ['Escala', '10 → 10.000 mensajes'],
+      ['Monitorea', 'Evals en producción'],
+    ],
+    verticals: [
+      {
+        id: 'contable',
+        label: 'Estudio contable',
+        tagline: 'Responde, recuerda vencimientos, agenda.',
+        bullets: [
+          'Responde consultas de monotributo y AFIP',
+          'Recordatorios automáticos de vencimientos',
+          'Agenda reuniones con el contador',
+          'Captura datos para recategorizaciones',
+        ],
+        kpi: { value: '−18hrs', label: 'liberadas por semana en la administración' },
+      },
+      {
+        id: 'inmobiliaria',
+        label: 'Inmobiliaria',
+        tagline: 'Filtra leads, agenda visitas, escala solo lo que vale.',
+        bullets: [
+          'Filtra consultas por garantía, presupuesto y zona',
+          'Agenda visitas en el calendario del agente',
+          'Captura lead data en el CRM',
+          'Escala a humano solo si hay match real',
+        ],
+        kpi: { value: '3.4×', label: 'más visitas agendadas vs. respuesta manual' },
+      },
+      {
+        id: 'juridico',
+        label: 'Estudio jurídico',
+        tagline: 'FAQ, califica el caso, agenda primera consulta.',
+        bullets: [
+          'FAQ con horarios, áreas, honorarios',
+          'Califica el área del caso (laboral, familia, comercial)',
+          'Agenda primera consulta paga',
+          'Envía formulario de preparación previo',
+        ],
+        note: 'Nunca da asesoramiento legal — flujo administrativo únicamente.',
+        kpi: { value: '+42%', label: 'tasa de show en primera consulta' },
+      },
+      {
+        id: 'ecommerce',
+        label: 'Local / E-commerce',
+        tagline: 'Responde stock, sugiere, toma pedidos por WhatsApp.',
+        bullets: [
+          'Responde stock y precios en tiempo real',
+          'Sugiere productos según consulta',
+          'Toma pedidos por WhatsApp',
+          'Escala a humano para cerrar la venta',
+        ],
+        kpi: { value: '< 8 seg', label: 'tiempo de primera respuesta · 24/7' },
+      },
+      {
+        id: 'clinica',
+        label: 'Clínica / Consultorio',
+        tagline: 'Turnos, confirmación 24h, FAQ de coberturas.',
+        bullets: [
+          'Reserva y reagenda turnos',
+          'Confirmación automática 24h antes (reduce no-shows)',
+          'FAQ de coberturas y preparación',
+          'Libera a la secretaria para tareas críticas',
+        ],
+        kpi: { value: '−65%', label: 'no-shows con confirmación 24h' },
+      },
+      {
+        id: 'gimnasio',
+        label: 'Gimnasio / Estudio',
+        tagline: 'Vende membresías, agenda clases de prueba.',
+        bullets: [
+          'Responde precios y planes 24/7',
+          'Agenda clase de prueba gratis',
+          'Convierte lead en membresía activa',
+          'Recordatorios de renovación',
+        ],
+        kpi: { value: '×2.1', label: 'tasa de conversión de consulta a prueba' },
+      },
+      {
+        id: 'taller',
+        label: 'Taller / Servicio técnico',
+        tagline: 'Turnos, presupuestos automáticos, recordatorios.',
+        bullets: [
+          'Cotiza service y reparaciones',
+          'Agenda turnos con disponibilidad real',
+          'Notifica cuando el trabajo está listo',
+          'Recordatorios de próximo service',
+        ],
+        kpi: { value: '+38%', label: 'turnos cerrados vs. respuesta manual' },
+      },
+      {
+        id: 'academia',
+        label: 'Academia / Escuela',
+        tagline: 'Info de cursos, inscripciones, clases demo.',
+        bullets: [
+          'Responde info de cursos, niveles y horarios',
+          'Agenda clase demo o evaluación de nivel',
+          'Procesa inscripciones y pagos',
+          'Recordatorios de inicio de curso',
+        ],
+        kpi: { value: '+52%', label: 'inscripciones vs. respuesta sólo por mail' },
+      },
+    ],
+  },
+  internal: {
+    eyebrow: '03 / Más allá de los chatbots',
+    title1: 'Automatizamos lo que',
+    title2: 'tu equipo hace a mano.',
+    subtitle:
+      'No todo agente atiende clientes. Procesamos PDFs, leemos logs, generamos reportes y reconciliamos facturas — para que tu equipo deje de copy-pastear y vuelva a pensar.',
+    pipelineLabel: 'PIPELINE EN VIVO',
+    pipelineInput: 'Entrada',
+    pipelineProcess: 'Procesamiento AI',
+    pipelineOutput: 'Salida',
+    pipelineInputs: ['Facturas PDF', 'Emails', 'Imágenes', 'Logs', 'PRs en GitHub'],
+    pipelineOutputs: [
+      'Excel limpio',
+      'Tickets ruteados',
+      'KPIs en dashboard',
+      'Alerta a Slack',
+      'Review en PR',
+    ],
+    categories: [
+      {
+        tag: 'DATA',
+        title: 'Datos no estructurados → estructurados',
+        desc: 'PDFs, imágenes, emails y respuestas de APIs convertidos en data limpia, validada y lista para usar.',
+        items: [
+          'PDF / imagen → Excel o base de datos',
+          'Clasificación y ruteo de documentos al equipo correcto',
+          'Resúmenes de múltiples documentos en cascada',
+          'Normalización de respuestas de APIs a tu schema interno',
+        ],
+      },
+      {
+        tag: 'REPORTES',
+        title: 'Reportes & dashboards',
+        desc: 'KPIs que se actualizan solos, board packs que se arman solos, research competitivo que llega cada lunes.',
+        items: [
+          'KPIs y dashboards en tiempo real',
+          'Reportes ejecutivos semanales y mensuales',
+          'Research competitivo y scraping automatizado',
+          'Generación de board packs y actas',
+        ],
+      },
+      {
+        tag: 'CALIDAD',
+        title: 'Calidad, alertas & anomalías',
+        desc: 'Sistemas que detectan el problema antes que vos, revisan código antes de mergear, y validan data antes de que entre.',
+        items: [
+          'Detección de anomalías en logs y métricas',
+          'Code review automático en PRs (estilo, seguridad, coverage)',
+          'Sweeps de calidad y validación de data',
+          'Alertas inteligentes antes que humanas',
+        ],
+      },
+      {
+        tag: 'OPS',
+        title: 'Back-office & operaciones',
+        desc: 'El trabajo invisible que mueve la empresa — enriquecer leads, reconciliar facturas, onboardear clientes — sin las 8 horas de Excel.',
+        items: [
+          'Enriquecimiento de leads y CRM (size, rol, stack)',
+          'Reconciliación de facturas y gastos vs. OC',
+          'Onboarding automatizado de empleados y clientes',
+          'Workflows entre Sheets, Notion, Slack, Drive',
+        ],
+      },
+    ],
+    footnote:
+      '¿Tu caso de uso no encaja en ninguna categoría? Probá el recomendador AI más abajo o reservá un diagnóstico.',
+  },
+  recommender: {
+    eyebrow: '02 / Empezá por acá',
+    title1: 'Describí lo que hacés.',
+    title2: 'Te diseñamos el agente.',
+    subtitle:
+      'Contanos en 1 o 2 líneas qué hace tu negocio y el recomendador propone un agente a medida con capacidades, integraciones y la primera automatización. Después mirá lo que construimos para confirmarlo.',
+    inputLabel: 'Tu negocio',
+    placeholder:
+      'Ej: Tengo una panadería, recibo pedidos por WhatsApp todo el día y se me mezclan con consultas de precios y horarios.',
+    designing: 'Diseñando…',
+    generate: 'Generar mi agente',
+    tryExample: 'O probá un ejemplo',
+    examples: [
+      'Tengo una veterinaria, me llaman todo el día por turnos y precios y se me escapan ventas.',
+      'Soy CEO de una agencia de marketing y perdemos tiempo respondiendo briefs iniciales.',
+      'Manejo una distribuidora de bebidas, los clientes piden por WhatsApp y se mezclan pedidos.',
+    ],
+    emptyTitle: 'Tu agente aparecerá acá',
+    emptyDesc:
+      'Generamos una propuesta concreta con las capacidades, integraciones y el primer proceso a automatizar ajustado a tu negocio.',
+    emptyPower: 'Powered by AI · Respuesta en ~10 seg',
+    loadTitle: 'Diseñando tu agente',
+    loadDesc:
+      'Analizando tu negocio, identificando procesos y cruzando con casos similares en nuestra base…',
+    errorTitle: 'Ups, algo falló',
+    errorMsg:
+      'No pudimos generar la recomendación. Probá de nuevo o reservá un diagnóstico directamente.',
+    errorCta: 'Reservá tu diagnóstico',
+    readyLabel: 'Recomendación AI',
+    whatItSolves: 'Qué resuelve',
+    integrations: 'Se integra con',
+    firstStepLabel: 'Primer paso · mes 1',
+    resultCta: 'Reservá tu diagnóstico',
+    adjust: 'Ajustar',
+    limitTitle: 'Límite de intentos alcanzado',
+    limitDesc: 'Exploraste 3 opciones. Reservá una llamada y lo diseñamos juntos.',
+    limitCta: 'Reservar llamada',
+  },
+  process: {
+    eyebrow: '04 / Cómo trabajamos',
+    title1: 'De la primera reunión',
+    title2: 'a producción en 2 semanas.',
+    subtitle:
+      'No hacemos demos para presentar. Construimos agentes que trabajan con clientes reales e integrados a las herramientas que tu equipo ya usa.',
+    avgTime: 'Tiempo promedio · 14 días',
+    steps: [
+      {
+        title: 'Entendemos cómo trabaja tu empresa',
+        desc: 'Analizamos cómo llegan las consultas, qué tareas consumen más tiempo y qué herramientas usa tu equipo hoy.',
+        duration: 'Semana 1',
+      },
+      {
+        title: 'Elegimos qué automatizar primero',
+        desc: 'Detectamos el proceso que más tiempo o ventas está perdiendo y lo convertimos en un flujo simple y útil.',
+        duration: 'Semana 1',
+      },
+      {
+        title: 'Construimos el agente',
+        desc: 'Lo adaptamos a tu negocio, tus respuestas, tus servicios y la forma en la que realmente trabaja tu equipo.',
+        duration: 'Semanas 1-2',
+      },
+      {
+        title: 'Lo conectamos a tus herramientas',
+        desc: 'WhatsApp, Gmail, CRM, Calendar o cualquier sistema que ya uses. Sin cambiar la forma de trabajar de tu equipo.',
+        duration: 'Semana 2',
+      },
+      {
+        title: 'Mejoramos el sistema con uso real',
+        desc: 'Ajustamos respuestas, flujos y automatizaciones usando conversaciones y datos reales de las primeras semanas.',
+        duration: 'Semana 2+',
+      },
+    ],
+  },
+  diagnostic: {
+    title1: 'Diagnóstico gratis.',
+    title2: '30 minutos.',
+    title3: 'Una plan concreto.',
+    desc1: 'Te dedicamos 30 min para identificar ',
+    desc2: 'qué proceso conviene automatizar primero',
+    desc3: ' en tu negocio. Te vas con un plan concreto, automatices con nosotros o no.',
+    bullets: [
+      'Identificamos dónde tu equipo pierde más tiempo hoy',
+      'Te mostramos qué se puede automatizar y qué impacto puede tener',
+      'Sin compromiso · sin presión · sin perder tiempo',
+    ],
+    formTitle: 'Reservá tu llamada',
+    formSubtitle: 'Te respondemos en menos de 24hs',
+    nameLabel: 'Nombre',
+    namePlaceholder: 'Tu nombre',
+    emailLabel: 'Mail',
+    emailPlaceholder: 'vos@negocio.com',
+    bizLabel: 'Tipo de negocio',
+    bizOptions: [
+      ['contable', 'Estudio contable'],
+      ['inmobiliaria', 'Inmobiliaria'],
+      ['juridico', 'Estudio jurídico'],
+      ['ecommerce', 'Local / E-commerce'],
+      ['clinica', 'Clínica / Consultorio'],
+      ['otro', 'Otro'],
+    ],
+    submit: 'Reservar diagnóstico',
+    orWriteUs: 'O escribinos a',
+    sentTitle: '¡Listo!',
+    sentDesc1: 'Te escribimos a ',
+    sentDescYourMail: 'tu mail',
+    sentDesc2: ' en menos de 24hs.',
+  },
+  footer: {
+    tagline:
+      'Automatizamos procesos con AI para PyMEs en LATAM. Sin que necesites un equipo tech interno.',
+    cta: 'Reservá tu diagnóstico',
+    servicesTitle: 'Servicios',
+    servicesLinks: [
+      ['#what-we-build', 'AI Agents'],
+      ['#what-we-build', 'Automatización'],
+      ['#what-we-build', 'Desarrollo a medida'],
+      ['#process', 'Cómo trabajamos'],
+    ],
+    contactTitle: 'Contacto',
+    region: 'LATAM · Argentina first',
+    hours: 'Lun a Vie · 9 a 18hs',
+    copy: '© 2026 Neuradev · Construyendo AI que funciona en producción.',
+    privacy: 'Privacidad',
+    terms: 'Términos',
+    version: 'v2.0 · ES',
+  },
+  agentDemo: {
+    online: 'en línea · automático',
+    today: 'HOY',
+    hint: 'Mensaje',
+    tag: 'AGENT.LIVE',
+    responseFooter: 'Respuesta < 8 seg · 24/7',
+    scripts: {
+      inmobiliaria: {
+        label: 'Inmobiliaria',
+        subtitle: 'Agente que filtra consultas y agenda visitas',
+        title: 'Marcos · interesado en alquiler',
+        messages: [
+          {
+            from: 'lead',
+            text: 'Hola! Vi el aviso del 2 ambientes en Palermo. Sigue disponible?',
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: '¡Hola Marcos! Sí, sigue disponible. ¿Es para uso personal o inversión?',
+            delay: 1800,
+            typing: 900,
+          },
+          { from: 'lead', text: 'Personal. Para mudarme con mi pareja.', delay: 1400 },
+          {
+            from: 'agent',
+            text: 'Perfecto. Para confirmarte rápido: ¿tenés garantía propietaria o necesitás seguro de caución?',
+            delay: 1700,
+            typing: 900,
+          },
+          { from: 'lead', text: 'Seguro de caución, no tengo garante.', delay: 1400 },
+          {
+            from: 'agent',
+            text: 'Genial, trabajamos con ambas. ¿Querés que coordinemos una visita esta semana? Tengo disponibilidad jueves 16hs o viernes 11hs.',
+            delay: 1900,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Viernes 11hs me viene bien 👍', delay: 1500 },
+          {
+            from: 'agent',
+            text: 'Listo, lo agendo. Te paso por mail la confirmación con dirección y datos del agente.',
+            delay: 1700,
+            typing: 800,
+          },
+          {
+            from: 'system',
+            text: '✓ Visita agendada · Lead calificado · Asignado a Lucía B.',
+            delay: 1300,
+          },
+        ],
+      },
+      contable: {
+        label: 'Estudio contable',
+        subtitle: 'Agente que responde consultas de monotributo',
+        title: 'Sofía · cliente actual',
+        messages: [
+          { from: 'lead', text: 'Hola, cuándo se vence el monotributo de mayo?', delay: 600 },
+          {
+            from: 'agent',
+            text: '¡Hola Sofía! El vencimiento de mayo es el martes 20. Te puedo recordar el día anterior si querés.',
+            delay: 1800,
+            typing: 1000,
+          },
+          {
+            from: 'lead',
+            text: 'Sí, dale. Y aprovecho: necesito pasar de categoría, cómo es?',
+            delay: 1500,
+          },
+          {
+            from: 'agent',
+            text: 'Recategorización: te paso el form interno para que carguemos facturación de los últimos 12 meses y lo revisa Daniela esta semana.',
+            delay: 1900,
+            typing: 1200,
+          },
+          { from: 'lead', text: 'Genial, mandámelo', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Enviado a tu mail. También te agendo un check rápido con Dani el jueves a las 15hs ✓',
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Recordatorio creado · Form enviado · Turno agendado con contador',
+            delay: 1300,
+          },
+        ],
+      },
+      clinica: {
+        label: 'Clínica',
+        subtitle: 'Agente que gestiona turnos y reduce no-shows',
+        title: 'Paciente · Dr. Méndez',
+        messages: [
+          {
+            from: 'lead',
+            text: 'Buenas, necesito un turno con el Dr. Méndez para esta semana',
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: '¡Hola! ¿Es primera consulta o seguimiento?',
+            delay: 1700,
+            typing: 900,
+          },
+          { from: 'lead', text: 'Seguimiento', delay: 900 },
+          {
+            from: 'agent',
+            text: 'Perfecto. Tengo miércoles 10:30 o jueves 17:00. ¿Cuál te queda mejor?',
+            delay: 1800,
+            typing: 1000,
+          },
+          { from: 'lead', text: 'Jueves 17 va', delay: 1000 },
+          {
+            from: 'agent',
+            text: 'Listo. Te confirmo 24hs antes por acá. Llevá tu DNI y los estudios previos.',
+            delay: 1700,
+            typing: 1100,
+          },
+          { from: 'system', text: '✓ Turno reservado · Confirmación 24h programada', delay: 1300 },
+        ],
+      },
+      ecommerce: {
+        label: 'E-commerce',
+        subtitle: 'Agente que cierra ventas por WhatsApp',
+        title: 'Cliente · consulta producto',
+        messages: [
+          { from: 'lead', text: 'Hola tienen la zapatilla blanca talle 41?', delay: 600 },
+          {
+            from: 'agent',
+            text: '¡Hola! Sí, la tenemos. $89.000 con envío gratis a CABA. ¿Querés que te la reserve?',
+            delay: 1700,
+            typing: 1000,
+          },
+          { from: 'lead', text: 'Y la negra? Cuál me recomendás?', delay: 1300 },
+          {
+            from: 'agent',
+            text: 'Las dos están buenísimas. La blanca es más liviana, la negra más resistente. Para uso diario te diría blanca.',
+            delay: 1900,
+            typing: 1200,
+          },
+          { from: 'lead', text: 'Dale blanca. Cómo pago?', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Te paso link de pago: Mercado Pago, tarjeta o transferencia. Llega en 24-48hs.',
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Orden creada · Link de pago enviado · Stock reservado',
+            delay: 1300,
+          },
+        ],
+      },
+      juridico: {
+        label: 'Estudio jurídico',
+        subtitle: 'Agente que califica casos y agenda primera consulta',
+        title: 'Lucas · consulta laboral',
+        messages: [
+          {
+            from: 'lead',
+            text: 'Hola, me despidieron sin causa. Atienden estos casos?',
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: '¡Hola Lucas! Sí, atendemos laboral. Para asignarte el abogado correcto: ¿hace cuánto trabajabas ahí y estabas en blanco?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: '3 años, en blanco', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Perfecto. La primera consulta es paga ($25.000) y dura 1hr. ¿Querés agendarla esta semana?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Sí, el viernes si pueden', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Listo. Viernes 16hs con la Dra. Pereyra. Te mando un form para que prepare el caso antes ✓',
+            delay: 1800,
+            typing: 1100,
+          },
+          {
+            from: 'system',
+            text: '✓ Consulta agendada · Área: laboral · Form enviado',
+            delay: 1300,
+          },
+        ],
+      },
+      gimnasio: {
+        label: 'Gimnasio',
+        subtitle: 'Agente que vende membresías y agenda clases',
+        title: 'Camila · interesada',
+        messages: [
+          { from: 'lead', text: 'Hola, cuánto sale la membresía mensual?', delay: 600 },
+          {
+            from: 'agent',
+            text: '¡Hola Cami! Tenemos 3 planes: básico $18.000, full $25.000, premium con nutricionista $35.000. ¿Te interesa alguno?',
+            delay: 1900,
+            typing: 1200,
+          },
+          { from: 'lead', text: 'El full. Puedo probar una clase antes?', delay: 1200 },
+          {
+            from: 'agent',
+            text: 'Claro! Clase de prueba gratis. Te ofrezco mañana 19hs (funcional) o sábado 10hs (yoga). ¿Cuál?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Sábado 10', delay: 900 },
+          {
+            from: 'agent',
+            text: 'Reservado. Te espero con DNI. Si te gusta, te activo la membresía en el momento.',
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Clase de prueba reservada · Lead caliente · Asignado a Diego',
+            delay: 1300,
+          },
+        ],
+      },
+      taller: {
+        label: 'Taller mecánico',
+        subtitle: 'Agente que toma turnos y presupuestos',
+        title: 'Cliente · service auto',
+        messages: [
+          { from: 'lead', text: 'Hola, necesito service para mi Corsa 2014', delay: 600 },
+          {
+            from: 'agent',
+            text: '¡Hola! Service 10mil km en Corsa es $58.000 (aceite, filtros y revisión). ¿Querés agendar?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Sí, también tiene un ruido raro adelante', delay: 1300 },
+          {
+            from: 'agent',
+            text: 'Lo revisamos sin cargo en el mismo service. Tengo lugar martes 9hs o jueves 14hs.',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Martes', delay: 900 },
+          {
+            from: 'agent',
+            text: 'Anotado. Dejá el auto a las 9, te llamamos cuando esté listo (~5hs). Te paso ubicación 📍',
+            delay: 1800,
+            typing: 1100,
+          },
+          {
+            from: 'system',
+            text: '✓ Turno reservado · Service + diagnóstico · Cliente notificado',
+            delay: 1300,
+          },
+        ],
+      },
+      academia: {
+        label: 'Academia',
+        subtitle: 'Agente que gestiona inscripciones y clases demo',
+        title: 'Estudiante · consulta cursos',
+        messages: [
+          {
+            from: 'lead',
+            text: 'Hola, me interesa el curso de inglés. Cuándo arranca?',
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: '¡Hola! El próximo arranca el lunes 3 de junio. ¿Sabés tu nivel o querés evaluación gratis?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Evaluación gratis', delay: 900 },
+          {
+            from: 'agent',
+            text: 'Te ofrezco martes 18hs o jueves 19hs. La evaluación dura 20 min y es online.',
+            delay: 1700,
+            typing: 1000,
+          },
+          { from: 'lead', text: 'Jueves 19', delay: 800 },
+          {
+            from: 'agent',
+            text: 'Agendado. Te mando el link de Zoom y un test corto para preparar ✓',
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Evaluación agendada · Material enviado · Lead en pipeline',
+            delay: 1300,
+          },
+        ],
+      },
+    },
+  },
+  recommenderPrompt: (
+    biz: string
+  ) => `Sos un experto en automatización con AI para PyMEs en Latinoamérica. Un dueño de negocio describe su empresa y vos diseñás un AI Agent a medida.
+
+Negocio: """${biz.trim()}"""
+
+Devolvé EXCLUSIVAMENTE un JSON válido con esta estructura (sin markdown, sin comentarios, sin texto extra):
+
+{
+  "agentName": "string — nombre corto y pegadizo del agente, ej: 'AgenteVet' o 'BriefBot'",
+  "tagline": "string — 1 línea, máximo 10 palabras, qué hace el agente",
+  "industry": "string — vertical/categoría del negocio en 2-4 palabras",
+  "capabilities": ["string", "string", "string", "string"],
+  "integrations": ["string", "string", "string"],
+  "firstWin": "string — el primer proceso a automatizar (la 'fruta más baja'), 1 oración concreta",
+  "kpi": { "value": "string — métrica con número/símbolo, ej '−18hrs' o '×3.2'", "label": "string — qué mide" }
 }
 
-export const getTranslations = (language: Language): Translations => {
-  return translations[language] || translations.en
+Reglas:
+- Todo en español rioplatense informal pero profesional.
+- 4 capabilities concretas y específicas al negocio descripto.
+- 3 integrations reales que usaría una PyME (WhatsApp Business, Gmail, Google Calendar, Mercado Pago, HubSpot, Sheets, etc.).
+- firstWin tiene que ser accionable y conservador — el primer mes.
+- KPI realista y específico al tipo de negocio.`,
 }
+
+const en: Translations = {
+  code: 'en',
+  nav: {
+    problem: 'The problem',
+    build: 'What we build',
+    recommender: 'Recommender',
+    process: 'How we work',
+    diagnostic: 'Free diagnostic',
+    langLabel: 'EN',
+  },
+  hero: {
+    badgeNew: 'NEW',
+    badge: 'AI Agents for SMBs · Available now',
+    titleA: 'Your business is losing hours',
+    titleB: 'every day',
+    titleC: 'AI fixes that.',
+    desc1: 'We help ',
+    desc2: 'companies integrate AI',
+    desc3:
+      ' into their daily operations. Building agents that automate repetitive tasks, integrate with real processes, and help teams operate faster and',
+    desc4: ' focus on what truly matters.',
+    ctaPrimary: 'Book your diagnostic — 30 min, free',
+    ctaSecondary: 'See how it works',
+    trust: 'No in-house tech team required',
+    tryLabel: 'Try an agent →',
+    marqueeTitle: 'Built for SMBs in LATAM',
+    marqueeItems: [
+      'Accounting firms',
+      'Real estate',
+      'Clinics',
+      'E-commerce',
+      'Law firms',
+      'Auto shops',
+      'Gyms',
+      'Schools',
+    ],
+  },
+  problem: {
+    eyebrow: '01 / The problem',
+    title1: `Most “AI Agents” you'll see on LinkedIn`,
+    title2: 'never become truly useful.',
+    subtitle:
+      "After months building agents for real businesses, we identified the three reasons why 90% don't succeed.",
+    failLabel: 'Failure',
+    fails: [
+      {
+        title: `It doesn't generate results`,
+        desc: `Answering messages isn't enough. If it doesn't automate real tasks, reduce costs, or generate sales, it's not a solution.`,
+      },
+      {
+        title: `It doesn't learn from your business`,
+        desc: `Generic templates sound like templates. If it doesn't use your real answers, real prices, and real processes — your customer notices on message one.`,
+      },
+      {
+        title: 'Maintaining it becomes a problem',
+        desc: 'Many agents work fine at first. Then come unmaintainable prompts, errors, and costs that scale fast.',
+      },
+    ],
+    solveLabel: 'How we solve it',
+    solveText1: 'We build agents tailored to your real processes, not templates.',
+    solveText2:
+      ' Designed to automate useful work, integrate with your tools, and operate in production from day one.',
+  },
+  whatWeBuild: {
+    eyebrow: '03 / What we build',
+    title1: 'Agents that face your customers.',
+    title2: 'Automations that clean up your back-office.',
+    subtitle: 'Pick the side that hurts more. You can start with one and add the other later.',
+    tabAgents: 'Customer-facing',
+    tabInternal: 'Back-office',
+  },
+  agents: {
+    eyebrow: '02 / Customer-facing agents',
+    title1: `An AI Agent isn't a chatbot.`,
+    title2: `It's an automated worker operating inside your business.`,
+    subtitle:
+      'Answers, qualifies, schedules, and integrates — facing your customers. Pick your vertical to see the concrete use case.',
+    useCaseLabel: 'Use case',
+    ctaCard: 'Book your diagnostic',
+    metaTags: [
+      ['Integrates', 'WhatsApp · Gmail · CRM'],
+      ['Learns', 'From your real responses'],
+      ['Scales', '10 → 10,000 messages'],
+      ['Monitors', 'Evals in production'],
+    ],
+    verticals: [
+      {
+        id: 'contable',
+        label: 'Accounting firm',
+        tagline: 'Answers, tracks deadlines, schedules.',
+        bullets: [
+          'Answers tax and compliance questions',
+          'Automatic deadline reminders',
+          'Schedules meetings with the accountant',
+          'Captures data for category changes',
+        ],
+        kpi: { value: '−18hrs', label: 'freed up per week in admin work' },
+      },
+      {
+        id: 'inmobiliaria',
+        label: 'Real estate',
+        tagline: 'Filters leads, schedules visits, escalates only what matters.',
+        bullets: [
+          'Filters inquiries by budget, area, and requirements',
+          `Schedules visits on the agent's calendar`,
+          'Captures lead data in the CRM',
+          'Escalates to a human only on a real match',
+        ],
+        kpi: { value: '3.4×', label: 'more visits booked vs. manual response' },
+      },
+      {
+        id: 'juridico',
+        label: 'Law firm',
+        tagline: 'FAQ, qualifies the case, books first consultation.',
+        bullets: [
+          'FAQ on hours, practice areas, fees',
+          'Qualifies case area (labor, family, commercial)',
+          'Schedules paid first consultation',
+          'Sends preparation form ahead of time',
+        ],
+        note: 'Never gives legal advice — administrative flow only.',
+        kpi: { value: '+42%', label: 'show-up rate on first consultation' },
+      },
+      {
+        id: 'ecommerce',
+        label: 'Retail / E-commerce',
+        tagline: 'Stock & prices, recommends, takes WhatsApp orders.',
+        bullets: [
+          'Answers stock and prices in real time',
+          'Recommends products based on inquiry',
+          'Takes orders via WhatsApp',
+          'Escalates to a human to close the sale',
+        ],
+        kpi: { value: '< 8 sec', label: 'first-response time · 24/7' },
+      },
+      {
+        id: 'clinica',
+        label: 'Clinic / Practice',
+        tagline: 'Appointments, 24h confirmation, coverage FAQ.',
+        bullets: [
+          'Books and reschedules appointments',
+          '24h-before automatic confirmation (cuts no-shows)',
+          'Coverage and prep FAQ',
+          'Frees the receptionist for critical tasks',
+        ],
+        kpi: { value: '−65%', label: 'no-shows with 24h confirmation' },
+      },
+      {
+        id: 'gimnasio',
+        label: 'Gym / Studio',
+        tagline: 'Sells memberships, books trial classes.',
+        bullets: [
+          'Answers prices and plans 24/7',
+          'Books free trial class',
+          'Converts lead to active membership',
+          'Renewal reminders',
+        ],
+        kpi: { value: '×2.1', label: 'inquiry-to-trial conversion rate' },
+      },
+      {
+        id: 'taller',
+        label: 'Auto shop / Service',
+        tagline: 'Appointments, automatic quotes, reminders.',
+        bullets: [
+          'Quotes service and repairs',
+          'Books appointments with real availability',
+          'Notifies when the work is done',
+          'Reminds about next service',
+        ],
+        kpi: { value: '+38%', label: 'appointments closed vs. manual response' },
+      },
+      {
+        id: 'academia',
+        label: 'Academy / School',
+        tagline: 'Course info, enrollments, demo classes.',
+        bullets: [
+          'Answers course info, levels, and schedules',
+          'Books demo class or level assessment',
+          'Processes enrollments and payments',
+          'Course start reminders',
+        ],
+        kpi: { value: '+52%', label: 'enrollments vs. email-only response' },
+      },
+    ],
+  },
+  internal: {
+    eyebrow: '03 / Beyond chatbots',
+    title1: 'We automate what',
+    title2: 'your team does by hand.',
+    subtitle:
+      'Not every agent serves customers. We process PDFs, parse logs, generate reports, and reconcile invoices — so your team stops copy-pasting and starts thinking again.',
+    pipelineLabel: 'LIVE PIPELINE',
+    pipelineInput: 'Input',
+    pipelineProcess: 'AI Processing',
+    pipelineOutput: 'Output',
+    pipelineInputs: ['PDF invoices', 'Emails', 'Images', 'Logs', 'GitHub PRs'],
+    pipelineOutputs: [
+      'Clean Excel',
+      'Routed tickets',
+      'Dashboard KPIs',
+      'Slack alert',
+      'PR review',
+    ],
+    categories: [
+      {
+        tag: 'DATA',
+        title: 'Unstructured → structured data',
+        desc: 'PDFs, images, emails, and API responses turned into clean, validated, ready-to-use data.',
+        items: [
+          'PDF / image → Excel or database',
+          'Document classification & routing to the right team',
+          'Multi-document summarization pipelines',
+          'API response normalization to your internal schema',
+        ],
+      },
+      {
+        tag: 'REPORTING',
+        title: 'Reports & dashboards',
+        desc: 'KPIs that update themselves, board packs that assemble themselves, competitive research delivered every Monday.',
+        items: [
+          'Real-time KPIs and dashboards',
+          'Weekly and monthly executive reports',
+          'Competitive intel & research scraping',
+          'Board packs and meeting minute generation',
+        ],
+      },
+      {
+        tag: 'QUALITY',
+        title: 'Quality, alerts & anomalies',
+        desc: 'Systems that catch the problem before you do, review code before merge, and validate data before it lands.',
+        items: [
+          'Log & metrics anomaly detection',
+          'Automated code review on PRs (style, security, coverage)',
+          'Data quality and validation sweeps',
+          'Smart alerts before humans notice',
+        ],
+      },
+      {
+        tag: 'OPS',
+        title: 'Back-office & operations',
+        desc: 'The invisible work that moves the company — lead enrichment, invoice reconciliation, onboarding — minus the 8 hours of Excel.',
+        items: [
+          'Lead / CRM enrichment (size, role, stack)',
+          'Invoice & expense reconciliation vs. POs',
+          'Employee & client onboarding automation',
+          'Workflows between Sheets, Notion, Slack, Drive',
+        ],
+      },
+    ],
+    footnote: `Doesn't fit a category? Try the AI recommender below or book a diagnostic.`,
+  },
+  recommender: {
+    eyebrow: '02 / Start here',
+    title1: 'Describe what you do.',
+    title2: 'We design the agent.',
+    subtitle:
+      'Tell us in 1 or 2 lines what your business does and the recommender proposes a custom agent with capabilities, integrations, and the first automation. Then scroll down to see what we build to confirm it.',
+    inputLabel: 'Your business',
+    placeholder:
+      'E.g. I run a bakery, I get orders on WhatsApp all day and they mix with questions about prices and hours.',
+    designing: 'Designing…',
+    generate: 'Generate my agent',
+    tryExample: 'Or try an example',
+    examples: [
+      'I run a veterinary clinic, I get calls all day about appointments and prices and miss sales.',
+      `I'm the CEO of a marketing agency and we waste time answering initial briefs.`,
+      'I run a beverage distributor, customers order on WhatsApp and orders get mixed up.',
+    ],
+    emptyTitle: 'Your agent will appear here',
+    emptyDesc:
+      'We generate a concrete proposal with capabilities, integrations, and the first process to automate tailored to your business.',
+    emptyPower: 'Powered by AI · Response in ~10 sec',
+    loadTitle: 'Designing your agent',
+    loadDesc:
+      'Analyzing your business, identifying processes, and cross-referencing with similar cases in our base…',
+    errorTitle: 'Oops, something failed',
+    errorMsg: `We couldn't generate the recommendation. Try again or book a diagnostic directly.`,
+    errorCta: 'Book your diagnostic',
+    readyLabel: 'AI Recommendation',
+    whatItSolves: 'What it solves',
+    integrations: 'Integrates with',
+    firstStepLabel: 'First step · month 1',
+    resultCta: 'Book your diagnostic',
+    adjust: 'Adjust',
+    limitTitle: 'Try limit reached',
+    limitDesc: "You've explored 3 options. Book a call and we'll design it together.",
+    limitCta: 'Book a call',
+  },
+  process: {
+    eyebrow: '04 / How we work',
+    title1: 'From the first meeting',
+    title2: 'to production in 2 weeks.',
+    subtitle: `We don't do demos to present. We build agents that work with real customers, integrated with the tools your team already uses.`,
+    avgTime: 'Avg. time · 14 days',
+    steps: [
+      {
+        title: 'We understand how your business works',
+        desc: 'We analyze how inquiries arrive, which tasks take the most time, and what tools your team uses today.',
+        duration: 'Week 1',
+      },
+      {
+        title: 'We choose what to automate first',
+        desc: 'We identify the process losing the most time or sales and turn it into a simple, useful flow.',
+        duration: 'Week 1',
+      },
+      {
+        title: 'We build the agent',
+        desc: 'We adapt it to your business, your responses, your services, and the way your team actually works.',
+        duration: 'Weeks 1–2',
+      },
+      {
+        title: 'We connect it to your tools',
+        desc: 'WhatsApp, Gmail, CRM, Calendar, or any system you already use. Without changing how your team works.',
+        duration: 'Week 2',
+      },
+      {
+        title: 'We improve the system with real usage',
+        desc: 'We adjust responses, flows, and automations using real conversations and data from the first weeks.',
+        duration: 'Week 2+',
+      },
+    ],
+  },
+  diagnostic: {
+    title1: 'Free diagnostic.',
+    title2: '30 minutes.',
+    title3: 'A concrete plan.',
+    desc1: 'We give you 30 min to identify ',
+    desc2: 'which process you should automate first',
+    desc3:
+      ' in your business. You leave with a concrete plan, whether you automate with us or not.',
+    bullets: [
+      'We identify where your team loses the most time today',
+      'We show you what can be automated and what impact it can have',
+      'No commitment · no pressure · no wasted time',
+    ],
+    formTitle: 'Book your call',
+    formSubtitle: 'We respond within 24h',
+    nameLabel: 'Name',
+    namePlaceholder: 'Your name',
+    emailLabel: 'Email',
+    emailPlaceholder: 'you@business.com',
+    bizLabel: 'Type of business',
+    bizOptions: [
+      ['contable', 'Accounting firm'],
+      ['inmobiliaria', 'Real estate'],
+      ['juridico', 'Law firm'],
+      ['ecommerce', 'Retail / E-commerce'],
+      ['clinica', 'Clinic / Practice'],
+      ['otro', 'Other'],
+    ],
+    submit: 'Book diagnostic',
+    orWriteUs: 'Or write to us at',
+    sentTitle: `You're in!`,
+    sentDesc1: `We'll write to `,
+    sentDescYourMail: 'your email',
+    sentDesc2: ' within 24h.',
+  },
+  footer: {
+    tagline:
+      'We automate processes with AI for SMBs in LATAM. Without needing an in-house tech team.',
+    cta: 'Book your diagnostic',
+    servicesTitle: 'Services',
+    servicesLinks: [
+      ['#what-we-build', 'AI Agents'],
+      ['#what-we-build', 'Automation'],
+      ['#what-we-build', 'Custom development'],
+      ['#process', 'How we work'],
+    ],
+    contactTitle: 'Contact',
+    region: 'LATAM · Argentina first',
+    hours: 'Mon–Fri · 9 to 18 (ART)',
+    copy: '© 2026 Neuradev · Building AI that works in production.',
+    privacy: 'Privacy',
+    terms: 'Terms',
+    version: 'v2.0 · EN',
+  },
+  agentDemo: {
+    online: 'online · automated',
+    today: 'TODAY',
+    hint: 'Message',
+    tag: 'AGENT.LIVE',
+    responseFooter: 'Response < 8 sec · 24/7',
+    scripts: {
+      inmobiliaria: {
+        label: 'Real estate',
+        subtitle: 'Agent that filters inquiries and books visits',
+        title: 'Marcus · rental inquiry',
+        messages: [
+          {
+            from: 'lead',
+            text: 'Hi! Saw the 2-bed listing in Brooklyn Heights. Still available?',
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: 'Hi Marcus! Yes, still available. Personal use or investment?',
+            delay: 1800,
+            typing: 900,
+          },
+          { from: 'lead', text: 'Personal. Moving in with my partner.', delay: 1400 },
+          {
+            from: 'agent',
+            text: 'Got it. Quick qualifying: do you have a guarantor or will you use a security deposit?',
+            delay: 1700,
+            typing: 900,
+          },
+          { from: 'lead', text: 'Security deposit, no guarantor.', delay: 1400 },
+          {
+            from: 'agent',
+            text: 'Perfect, we work with both. Want to schedule a visit this week? I have Thursday 4pm or Friday 11am.',
+            delay: 1900,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Friday 11am works 👍', delay: 1500 },
+          {
+            from: 'agent',
+            text: `Done, booking it. I'll email confirmation with address and agent details.`,
+            delay: 1700,
+            typing: 800,
+          },
+          {
+            from: 'system',
+            text: '✓ Visit booked · Lead qualified · Assigned to Lucy B.',
+            delay: 1300,
+          },
+        ],
+      },
+      contable: {
+        label: 'Accounting firm',
+        subtitle: 'Agent that answers tax questions',
+        title: 'Sophie · current client',
+        messages: [
+          { from: 'lead', text: `Hi, when's the May tax deadline?`, delay: 600 },
+          {
+            from: 'agent',
+            text: 'Hi Sophie! May deadline is Tuesday the 20th. Want me to remind you the day before?',
+            delay: 1800,
+            typing: 1000,
+          },
+          {
+            from: 'lead',
+            text: 'Yes please. Also: I need to change tax category, how does it work?',
+            delay: 1500,
+          },
+          {
+            from: 'agent',
+            text: `Category change: I'll send the internal form so we can load the last 12 months of revenue and Danielle reviews it this week.`,
+            delay: 1900,
+            typing: 1200,
+          },
+          { from: 'lead', text: 'Great, send it over', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Sent to your email. Also booked a quick check with Dani on Thursday at 3pm ✓',
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Reminder set · Form sent · Meeting booked with accountant',
+            delay: 1300,
+          },
+        ],
+      },
+      clinica: {
+        label: 'Clinic',
+        subtitle: 'Agent that books appointments and cuts no-shows',
+        title: 'Patient · Dr. Mendez',
+        messages: [
+          { from: 'lead', text: 'Hi, I need an appointment with Dr. Mendez this week', delay: 600 },
+          { from: 'agent', text: 'Hi! First consultation or follow-up?', delay: 1700, typing: 900 },
+          { from: 'lead', text: 'Follow-up', delay: 900 },
+          {
+            from: 'agent',
+            text: 'Perfect. I have Wednesday 10:30am or Thursday 5pm. Which works?',
+            delay: 1800,
+            typing: 1000,
+          },
+          { from: 'lead', text: 'Thursday 5 works', delay: 1000 },
+          {
+            from: 'agent',
+            text: `Booked. I'll confirm 24h before. Bring ID and previous reports.`,
+            delay: 1700,
+            typing: 1100,
+          },
+          {
+            from: 'system',
+            text: '✓ Appointment booked · 24h confirmation scheduled',
+            delay: 1300,
+          },
+        ],
+      },
+      ecommerce: {
+        label: 'E-commerce',
+        subtitle: 'Agent that closes sales over WhatsApp',
+        title: 'Customer · product inquiry',
+        messages: [
+          { from: 'lead', text: 'Hi do you have the white sneaker in size 9?', delay: 600 },
+          {
+            from: 'agent',
+            text: 'Hi! Yes, we have it. $89 with free shipping. Want me to reserve it?',
+            delay: 1700,
+            typing: 1000,
+          },
+          { from: 'lead', text: 'And the black? Which do you recommend?', delay: 1300 },
+          {
+            from: 'agent',
+            text: `Both are great. White is lighter, black is more durable. For daily use I'd say white.`,
+            delay: 1900,
+            typing: 1200,
+          },
+          { from: 'lead', text: 'Go white. How do I pay?', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Sending payment link: card or transfer. Arrives in 24-48h.',
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Order created · Payment link sent · Stock reserved',
+            delay: 1300,
+          },
+        ],
+      },
+      juridico: {
+        label: 'Law firm',
+        subtitle: 'Agent that qualifies cases and books first consult',
+        title: 'Luke · labor inquiry',
+        messages: [
+          {
+            from: 'lead',
+            text: 'Hi, I was fired without cause. Do you handle these cases?',
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: 'Hi Luke! Yes, we handle labor. To assign the right attorney: how long were you employed and were you on the books?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: '3 years, on the books', delay: 1100 },
+          {
+            from: 'agent',
+            text: 'Perfect. First consultation is paid ($250) and runs 1hr. Want to book this week?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Yes, Friday if possible', delay: 1100 },
+          {
+            from: 'agent',
+            text: `Done. Friday 4pm with Ms. Pereyra. I'll send a form so she can prep the case ✓`,
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'system', text: '✓ Consultation booked · Area: labor · Form sent', delay: 1300 },
+        ],
+      },
+      gimnasio: {
+        label: 'Gym',
+        subtitle: 'Agent that sells memberships and books classes',
+        title: 'Camille · interested',
+        messages: [
+          { from: 'lead', text: 'Hi, how much is the monthly membership?', delay: 600 },
+          {
+            from: 'agent',
+            text: 'Hi Camille! We have 3 plans: basic $40, full $60, premium with nutritionist $90. Interested in any?',
+            delay: 1900,
+            typing: 1200,
+          },
+          { from: 'lead', text: 'The full. Can I try a class first?', delay: 1200 },
+          {
+            from: 'agent',
+            text: 'Of course! Free trial class. I have tomorrow 7pm (functional) or Saturday 10am (yoga). Which?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Saturday 10', delay: 900 },
+          {
+            from: 'agent',
+            text: `Booked. Bring ID. If you like it, I'll activate the membership on the spot.`,
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Trial class booked · Hot lead · Assigned to Diego',
+            delay: 1300,
+          },
+        ],
+      },
+      taller: {
+        label: 'Auto shop',
+        subtitle: 'Agent that books service and quotes',
+        title: 'Customer · car service',
+        messages: [
+          { from: 'lead', text: 'Hi, I need a service for my Civic 2014', delay: 600 },
+          {
+            from: 'agent',
+            text: 'Hi! 10k-mile service on the Civic is $180 (oil, filters, inspection). Want to book?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Yes, it also has a weird noise up front', delay: 1300 },
+          {
+            from: 'agent',
+            text: `We'll inspect that during the service at no charge. I have Tuesday 9am or Thursday 2pm.`,
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Tuesday', delay: 900 },
+          {
+            from: 'agent',
+            text: `Got it. Drop the car off at 9, we'll call when ready (~5h). Sending location 📍`,
+            delay: 1800,
+            typing: 1100,
+          },
+          {
+            from: 'system',
+            text: '✓ Appointment booked · Service + diagnosis · Customer notified',
+            delay: 1300,
+          },
+        ],
+      },
+      academia: {
+        label: 'Academy',
+        subtitle: 'Agent that manages enrollments and demo classes',
+        title: 'Student · course inquiry',
+        messages: [
+          {
+            from: 'lead',
+            text: `Hi, I'm interested in the English course. When does it start?`,
+            delay: 600,
+          },
+          {
+            from: 'agent',
+            text: 'Hi! Next cohort starts Monday June 3. Do you know your level or want a free assessment?',
+            delay: 1800,
+            typing: 1100,
+          },
+          { from: 'lead', text: 'Free assessment', delay: 900 },
+          {
+            from: 'agent',
+            text: 'I have Tuesday 6pm or Thursday 7pm. The assessment takes 20 min and is online.',
+            delay: 1700,
+            typing: 1000,
+          },
+          { from: 'lead', text: 'Thursday 7', delay: 800 },
+          {
+            from: 'agent',
+            text: `Booked. I'll send the Zoom link and a short test to prepare ✓`,
+            delay: 1700,
+            typing: 1000,
+          },
+          {
+            from: 'system',
+            text: '✓ Assessment booked · Material sent · Lead in pipeline',
+            delay: 1300,
+          },
+        ],
+      },
+    },
+  },
+  recommenderPrompt: (
+    biz: string
+  ) => `You are an expert in AI automation for SMBs. A business owner describes their company and you design a custom AI Agent.
+
+Business: """${biz.trim()}"""
+
+Return EXCLUSIVELY a valid JSON object with this structure (no markdown, no comments, no extra text):
+
+{
+  "agentName": "string — short catchy agent name, e.g. 'VetAgent' or 'BriefBot'",
+  "tagline": "string — 1 line, max 10 words, what the agent does",
+  "industry": "string — business vertical/category in 2-4 words",
+  "capabilities": ["string", "string", "string", "string"],
+  "integrations": ["string", "string", "string"],
+  "firstWin": "string — the first process to automate (the 'lowest-hanging fruit'), 1 concrete sentence",
+  "kpi": { "value": "string — metric with number/symbol, e.g. '−18hrs' or '×3.2'", "label": "string — what it measures" }
+}
+
+Rules:
+- All in professional but conversational English.
+- 4 capabilities concrete and specific to the described business.
+- 3 real integrations an SMB would use (WhatsApp Business, Gmail, Google Calendar, Stripe, HubSpot, Sheets, etc.).
+- firstWin must be actionable and conservative — month one.
+- KPI realistic and specific to the business type.`,
+}
+
+const translations: Record<Language, Translations> = { en, es }
+
+export const getTranslations = (language: Language): Translations =>
+  translations[language] ?? translations.es
