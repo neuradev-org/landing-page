@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-const CALENDLY_URL = 'https://calendly.com/neuradev-aisolutions/30min'
+const CALENDLY_URL = 'https://calendly.com/neuradev/30min'
 
 export function Diagnostic() {
   const { t, lang } = useLang()
