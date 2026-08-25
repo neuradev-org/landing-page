@@ -6,6 +6,7 @@ import { WhatWeBuild } from './components/sections/WhatWeBuild'
 import { Process } from './components/sections/Process'
 import { Diagnostic } from './components/sections/Diagnostic'
 import { Footer } from './components/sections/Footer'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Diagnostic />
       </main>
       <Footer />
+      <Analytics />
     </div>
   )
 }
